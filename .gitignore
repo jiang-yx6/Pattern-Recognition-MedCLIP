@@ -1,0 +1,39 @@
+# Local environments and generated files
+.venv*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/.cache/
+/tmp/
+*.log
+*.tmp
+*.bak
+
+# Restricted data, patient-level indices, previews and features stay local.
+/raw/
+/subset/
+/outputs/
+
+# Fetch the pinned upstream repository separately; avoid nested Git repositories.
+/MedCLIP/
+*.zip
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/.vscode/
+/.idea/
+Thumbs.db
+.DS_Store
+
+# Local teaching material is not part of the source distribution.
+/项目二第一组 实验要求和指导说明书.pdf

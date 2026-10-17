@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "manifest": "subset/mimic_5000.csv",
+  "label_names": "subset/label_names.json",
+  "model_repository": "MedCLIP",
+  "checkpoint": "MedCLIP/pytorch_model.bin",
+  "expected_checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+  "expected_medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+  "expected_manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+  "expected_selection_sha256": "5128ce340f52a893a4ac40897c3a45281bb8c794083a23e123a638bb6cf65d8e",
+  "device": "cuda",
+  "batch_size": 4,
+  "text_max_length": 77,
+  "smoke_samples": 16,
+  "smoke_split": "train",
+  "smoke_output": "outputs/medclip_check"
+}
