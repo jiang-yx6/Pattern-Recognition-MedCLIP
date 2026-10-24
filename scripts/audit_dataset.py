@@ -18,9 +18,11 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
     parser.add_argument('--out',type=Path,default=None)
+    parser.add_argument('--config',type=Path,default=Path(__file__).resolve().parents[1]/'configs/default.json')
     args=parser.parse_args()
     root=args.root.resolve(); sub=root/'subset'
-    out=args.out or root/'outputs'/'data_audit'
+    config=json.loads(args.config.read_text(encoding='utf-8-sig'))
+    out=args.out or root/config['step0_dir']/'checks'/'data_audit'
     out.mkdir(parents=True,exist_ok=True)
     started=time.perf_counter()
     checks=[]

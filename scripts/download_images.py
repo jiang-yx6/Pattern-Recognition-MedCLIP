@@ -5,6 +5,7 @@ only in Wget's terminal prompt. This script never changes dataset manifests.
 from pathlib import Path
 import argparse
 import csv
+import json
 import shutil
 import subprocess
 import sys
@@ -13,7 +14,7 @@ from urllib.parse import urlsplit
 
 from PIL import Image, ImageFile
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 URL_ROOT = 'https://physionet.org/files/mimic-cxr-jpg/2.1.0/files/'
 ImageFile.LOAD_TRUNCATED_IMAGES = False
 
@@ -92,7 +93,8 @@ def main():
         parser.error('--retries and --timeout must be positive')
     output_dir = args.output_dir.resolve()
     rows = read_manifest(args.manifest.resolve(), output_dir)
-    log_dir = ROOT / 'outputs/download'
+    config = json.loads((ROOT / 'configs/default.json').read_text(encoding='utf-8-sig'))
+    log_dir = ROOT / config['step0_dir'] / 'checks' / 'download'
     log_dir.mkdir(parents=True, exist_ok=True)
     statuses = []
     pending = []
@@ -140,7 +142,7 @@ def main():
     failures = sum(record['status'] != 'ok' for record in statuses)
     print(f'Complete: {len(rows)-failures}/{len(rows)}; missing or invalid: {failures}', flush=True)
     if completed.returncode or failures:
-        print('Download incomplete. Inspect Wget output and outputs/download/status.csv; rerun to retry.', file=sys.stderr)
+        print(f'Download incomplete. Inspect Wget output and {log_dir / "status.csv"}; rerun to retry.', file=sys.stderr)
         return 1
     return 0
 

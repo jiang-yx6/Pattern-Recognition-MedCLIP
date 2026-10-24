@@ -15,4 +15,4 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
-      - run: python -B Step0/check_repository.py
+      - run: python -B scripts/check_repository.py

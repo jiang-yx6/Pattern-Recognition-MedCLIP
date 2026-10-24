@@ -1,146 +1,146 @@
-# MIMIC-CXR 数据与 MedCLIP 流程
+# MIMIC-CXR / MedCLIP 实验工程
 
-当前固定子集包含 5000 名患者，每人一张 AP/PA 正位图像和一份报告，患者级划分 train/val/test=4000/500/500，种子 42。5000 张图像已通过完整解码与数据审计；冻结 MedCLIP 已在 CUDA 上通过 16 对样本检查，两种特征均为 512 维。全量特征提取与正式检索实验尚未实现。
+六个正式入口严格命名为 `prepare_data.py`、`extract_features.py`、`train_metric.py`、`mine_negatives.py`、`evaluate_retrieval.py`、`analyze_geometry.py`。共用 `configs/default.json`：固定数据划分 seed=42，训练 seeds=[42,43,44]，方法 R0/A/B/C/D。所有新产物统一写入 `outputs/Step0/`；原始图片保留在 `subset/images/`，不会重复复制。
 
-## 代码入口
+## 目录导航
 
-| 文件 | 用途 |
-| --- | --- |
-| `prepare_mimic_subset.py` | 从原始 metadata、CheXpert 和报告按固定名单重建索引 |
-| `download_images.py` | 唯一下载入口，使用 GNU Wget，完整解码并跳过已有完好图片 |
-| `Step0/audit_dataset.py` | 全量核查图像、报告、标签、划分及严格抽样规则 |
-| `Step0/check_medclip.py` | 权重检查、16 对特征验证及 5 对图文 HTML 核对页 |
-| `Step0/check_repository.py` | 仅用标准库检查 Git 提交范围、代码语法、JSON、常见凭据及误提交数据 |
+| 位置 | 内容 |
+|---|---|
+| 根目录六个正式入口 | 数据准备、特征提取、训练、负例挖掘、检索评估、几何分析 |
+| mimic_pipeline/ | 六入口共用的实际算法实现 |
+| configs/default.json | 数据路径、种子、方法和训练参数 |
+| scripts/ | 下载和检查工具，原 Step0/ 中的三个脚本已迁入此处 |
+| tests/ | 关键算法与边界测试 |
+| docs/handoff.md | 唯一交接说明：架构、数据接口、已有结果及后续待办 |
+| outputs/Step0/ | 集中生成产物，详见其中 README.md |
+| raw/、subset/ | 原始报告/元数据与固定图片、源索引 |
+| MedCLIP/、.venv-medclip/ | 固定官方模型与本机运行环境 |
+| hypotheses.md | 纳入版本管理的实验假设源文件 |
+| requirements-medclip.txt | 环境依赖 |
+| subset.rar、指导书 PDF | 按要求保留的交接备份与任务依据 |
 
-旧补下载与患者替换代码已移出代码入口；重复查看脚本、模型压缩包、历史归档及其中的旧日志已删除，过时说明已合并。安装、操作和后续规划统一见本 README。按用户要求，保留 `mimic-cxr-reports.zip`、`raw/cxr-record-list.csv.gz` 和 `raw/cxr-study-list.csv.gz`。
+先阅读 [交接说明](docs/handoff.md)，再按下面命令运行。`scripts/` 是工具源码，`outputs/Step0/checks/` 是检查结果，两者用途不同。
 
-## 保留的文件
+## CMD 运行
 
-| 路径 | 用途 |
-| --- | --- |
-| `raw/mimic-cxr-2.0.0-metadata.csv.gz` | 原始患者、检查、图像、体位与尺寸；最小 study_id 规则的核查依据 |
-| `raw/mimic-cxr-2.0.0-chexpert.csv.gz` | 原始弱标签与 mask 核查依据 |
-| `raw/reports/files/` | 解压后的原始报告，供重建和来源核查 |
-| `subset/images/` | 正式 5000 张图片 |
-| `subset/mimic_5000.csv` | 主索引：patient_id、study_id、image_path、report、split、labels、mask |
-| `subset/mimic_5000_full.csv` | 带原始标签、dicom_id、体位和下载 URL 的完整索引 |
-| `subset/patient_selection.csv`、`selection_provenance.json` | 固定名单、顺序和 SHA256，复现当前子集所需 |
-| `subset/label_names.json`、`train_class_statistics.csv`、`frequency_groups.json` | 标签顺序、训练频数及高低频分组 |
-| `MedCLIP/` | 官方源码、本地 `pytorch_model.bin` 及可编辑安装信息 |
-| `configs/default.json` | 数据路径、模型、seed、文本长度和 batch size 等配置 |
-| `outputs/data_audit/` | 最新审计总结果、逐图解码/尺寸/哈希、原始报告来源记录 |
-| `outputs/model_info.json` | 最近一次权重/模型检查状态、版本及哈希 |
-| `outputs/medclip_check/` | 16 对特征、相似度、样本索引、截断记录、运行元数据及 5 对核对页和预览图 |
-| `outputs/text_statistics.json` | 全量 5000 份报告在 77 token 限制下的截断统计 |
-| `hypotheses.md` | 任务书要求的 H1—H3 实验假设，结论仍待实验 |
+在项目根目录执行，例如先 `cd /d E:\MIMIC`。使用已安装的 uv 模型环境：
 
-审计只在发现异常时生成错误清单。`outputs/medclip_check/metadata.json` 对应该次 16 对运行；`outputs/model_info.json` 是最近状态入口，后续运行可能更新。
+```cmd
+".venv-medclip\Scripts\python.exe" prepare_data.py
+".venv-medclip\Scripts\python.exe" extract_features.py
+".venv-medclip\Scripts\python.exe" train_metric.py --smoke-test
+".venv-medclip\Scripts\python.exe" train_metric.py
+".venv-medclip\Scripts\python.exe" mine_negatives.py
+".venv-medclip\Scripts\python.exe" evaluate_retrieval.py
+".venv-medclip\Scripts\python.exe" analyze_geometry.py
+```
 
-## 数据规则
+`extract_features` 默认使用本地 Hugging Face 缓存；缺少配置或 tokenizer 时添加 `--online`。已生成且指纹匹配的特征可复用，数据/参数不匹配会停止，显式 `--force` 才重新提取。训练同样只复用配置和训练缓存匹配的完整运行。
 
-- 先确定每名患者全部检查中最小的 study_id，再要求该检查有 AP/PA 图像，最后按 dicom_id 取一张；不回退到其他检查。
-- 报告优先 Findings，缺失时取 Impression，两者均空则排除。图片相对路径以 `subset/` 为根目录。
-- 五病种顺序：Atelectasis、Cardiomegaly、Consolidation、Edema、Pleural Effusion。原标签 0/1 有效，-1/空白设 mask=0；不能将 mask=0 当作已知阴性。
-- 高频为 Atelectasis、Cardiomegaly，低频为 Edema、Consolidation，中间为 Pleural Effusion；频数只使用训练集。
-- 保留原报告中的脱敏占位符。重复报告及弱标签限制需写入实验说明；配对按检查 ID 确定。
+所有入口支持 `--config`。模型入口支持 `--device cuda|cpu`。训练默认执行 A/B/C/D × 42/43/44 共 12 次，最多 20 epoch，val 双向 R@5 均值连续 3 轮不升即停止；可用 `--method B --seed 43` 指定单次。`--smoke-test` 固定使用 128 对训练数据跑 2 轮，写入单独的 `smoke_training/`，不会混入正式模型。
 
-## 环境：uv + CMD
+检索默认评估 val、R0/A/B/C/D、各训练种子及 1/5 版本提示；`--split test` 只在最终评测时使用。`mine_negatives` 默认对 B 的三个种子进行训练集批内最高 25% 挖掘；`--method D` 切换方法，`--mode budget` 额外输出 Top50 内直接 Top20 和冲突候选优先 Top20。普通 B/D 训练在每个批次动态重新挖掘，不读取静态候选清单。
 
-Python 3.11。保留 `.venv` 数据准备环境与 `.venv-medclip` 模型环境，避免旧 MedCLIP 与新版数据依赖冲突。当前两个环境已经存在，无需重建。GNU Wget 需加入 PATH。
+几何分析固定使用 val，C/D 同时分析共享与私有分支，默认包括联合 PCA+t-SNE；快速数值排查可加 `--skip-visualization`。二维图仅辅助解释，类别着色使用第一个已知阳性标签，多病与未知的统计保留在原始 labels/mask。
 
-以下命令用于新机器重建，不需要激活环境：
+## Step0 产物目录
 
-所有命令均在项目根目录执行，例如先执行 `cd /d E:\MIMIC`；队友使用自己的克隆路径。新机器先获取固定版本官方源码，已有本地 MedCLIP 时跳过 clone，并用 `git -C MedCLIP rev-parse HEAD` 核对版本：
+```text
+outputs/Step0/
+  config_snapshot.json
+  hypotheses.md
+  README.md
+  indices/
+    mimic_5000.csv, mimic_5000_full.csv
+    train.csv, val.csv, test.csv
+    patient_selection.csv, selection_provenance.json
+    label_names.json, train_class_statistics.csv, frequency_groups.json
+    report_sections.csv
+  features/
+    train.npz, val.npz, test.npz
+    train.json, val.json, test.json, metadata.json
+    disease_prompts.npz
+  text_statistics.json
+  checks/
+    data_audit/, medclip_check/
+  logs/
+    prepare_data.json, extract_features.json
+  training/<method>/seed_<seed>/
+    model.pt, val_features.npz, losses.csv, losses.png
+    per_dimension_std.json, runtime.json
+    hard_examples_20.csv  (B/D)
+  negatives/<method>/seed_<seed>/<batch|budget>/
+  evaluation/<val|test>/
+  geometry/
+```
+
+`training/*/runtime.json` 为真实每次训练的种子、方法、耗时、峰值 CUDA 显存、参数量、早停轮次、梯度和冻结检查；不使用小样本耗时冒充正式训练记录。CPU 调试的 CUDA 显存记 null。根目录 `hypotheses.md` 是版本化的预先约定模板；`outputs/Step0/hypotheses.md` 是本次交付快照，H1-H3 均列比较组、主指标和预期方向。正式实验结论必须依据后续数值和区间填写。
+
+### 缓存接口
+
+每个 split 的 NPZ 至少保存 `patient_id`、`study_id`、`image_feature`、`text_feature`、`labels`、`mask`、`branch`、`tokens_before_truncation`。图文基础特征 float32、N×512、L2 单位向量；labels/mask 为 N×5；ID 为整数，顺序与 split 索引一致。
+
+`text_prompt_features` 为 P×N×512，train 的 P=1，val/test 的 P=5。五版本为原文与指导书四个前缀，正文不改；评估时逐版本先经过对应方法文本头并归一化，再求均值并再次归一化。读取缓存时重新核对患者/检查 ID、标签、范数、文件 SHA256 和模型/索引来源。
+
+`image_path` 沿用 `images/...`，始终相对于配置中的 `data.image_root`，不相对于集中后的索引目录。不要移动图片来匹配索引文件夹。
+
+## 数据与训练约定
+
+固定 5000 名患者，每人先按全部检查取最小 study_id，再要求该检查有 AP/PA，最后取最小 dicom_id。报告优先 Findings、缺失取 Impression，两者均空排除。固定名单的 SHA256、主索引 SHA256、MedCLIP 官方 commit 与权重 SHA256 在共享配置中锁定。prepare_data 从本地原始文件重建并核对指纹，不修改正式图片和原来的固定名单。
+
+数据划分固定 train/val/test=4000/500/500。三个训练种子不重新划分。五病种顺序 Atelectasis、Cardiomegaly、Consolidation、Edema、Pleural Effusion；原始 0/1 有效，-1/空白设 mask=0。未知标签不能当作阴性，五类全未知仍可配对学习。已知阳性集合相同且非空的配对从负例中排除；同患者也不作负例。无有效负例的查询跳过并记录次数。
+
+A/B 为两端各 Linear(512,256)，C/D 增加各自私有头与 Linear(512,512) 重建头。共享向量用于检索。双向 InfoNCE 温度 0.07；B/D 每方向在有效批内负例中选最高 25%（向上取整）权重 2，其余与正例权重 1。AdamW lr=1e-3、weight_decay=1e-4、batch=128。C/D 额外损失为 0.1×重建 MSE + 0.01×中心化共享/私有交叉协方差均方值，两模态取平均。
+
+检索以同检查为唯一相关项，AP=正确项名次的倒数。候选库和 ID 顺序固定，相同分数按候选顺序打破平局。统计按自然类别频率及已知阳性进行分组；未知不算阴性。报告正文重复会产生语义相同但严格配对 ID 不同的候选，需要在实验分析中说明。
+
+## 安装环境（uv、CMD）
+
+项目统一使用 `.venv-medclip` 和 `requirements-medclip.txt`，数据准备与模型代码均已验证兼容；旧 `.venv` 已移除。已有 `.venv-medclip` 时无需重建。新机器先获取固定官方源码和合法取得的数据、权重：
 
 ```cmd
 git clone --no-checkout https://github.com/RyanWangZf/MedCLIP.git MedCLIP
 git -C MedCLIP checkout --detach 9c3396f20d5d54e4fae241b8cb06ca45848e98c9
-```
-
-从项目使用的官方 ViT 权重包获取 `pytorch_model.bin` 并放在 `MedCLIP/`。配置记录权重 SHA256、官方代码 commit、正式主索引和固定名单 SHA256；模型检查会拒绝不匹配的权重、代码或主索引。仅克隆代码不会自动获得权重或受限数据。
-
-```cmd
-uv venv --python 3.11 ".venv"
-uv pip install --python ".venv\Scripts\python.exe" -r "requirements-data.txt"
-
-uv venv --python 3.11 ".venv-medclip"
+uv venv --python 3.11 .venv-medclip
 uv pip install --python ".venv-medclip\Scripts\python.exe" torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
-uv pip install --python ".venv-medclip\Scripts\python.exe" -r "requirements-medclip.txt"
-uv pip install --python ".venv-medclip\Scripts\python.exe" --no-deps -e "MedCLIP"
+uv pip install --python ".venv-medclip\Scripts\python.exe" -r requirements-medclip.txt
+uv pip install --python ".venv-medclip\Scripts\python.exe" --no-deps -e MedCLIP
 ```
 
-需要本机代理时，先在 CMD 会话设置：
+将官方 ViT 权重 `pytorch_model.bin` 放入 `MedCLIP/`。官方名为 ViT 的视觉骨干实际为 Swin。代码使用官方 processor，固定 max_length padding，文本最大长度 77；全量原文截断比例为 34.42%，详见实际提取统计。首次需要 Hugging Face 配置和 tokenizer，缓存就绪后可离线。
+
+需要本机代理时先执行：
 
 ```cmd
 set HTTPS_PROXY=http://127.0.0.1:10808
 set HTTP_PROXY=http://127.0.0.1:10808
 ```
 
-已验证模型环境为 torch 2.5.1+cu121、torchvision 0.20.1、transformers 4.24.0，显卡 RTX 3060 Laptop。其余依赖见对应 requirements 文件。
-
-## 下载、索引重建与审计
-
-当前图片已下载完整。需要重新下载时使用：
+## 核查、下载与协作
 
 ```cmd
-".venv\Scripts\python.exe" "download_images.py" --username YOUR_PHYSIONET_USERNAME --proxy http://127.0.0.1:10808
+".venv-medclip\Scripts\python.exe" -m unittest discover -s tests -v
+".venv-medclip\Scripts\python.exe" scripts\audit_dataset.py
+".venv-medclip\Scripts\python.exe" scripts\check_medclip.py --offline
+".venv-medclip\Scripts\python.exe" scripts\check_repository.py
 ```
 
-直接联网时省略 `--proxy ...`。Wget 在需要下载时询问密码，不将密码写入命令行或配置。完好图片会跳过；无法解码的旧图片先移入 `outputs/download/invalid_images/`。下载状态保存于 `outputs/download/`，不更改正式索引。
+数据准备仅使用 `prepare_data.py`。`scripts/download_images.py` 为唯一下载脚本，默认读取原来的完整索引；可显式指定 `--manifest outputs/Step0/indices/mimic_5000_full.csv --output-dir subset`。认证通过 GNU Wget 终端询问密码，不写入配置，下载检查记录写入集中产物的 checks/download/。
 
-检查下载状态、按固定名单重建索引、执行全量审计：
+GitHub 仅提交源码、配置和不含患者信息的说明。整个 raw、subset、outputs、本地 MedCLIP、环境、权重和压缩包均被忽略。`outputs/Step0` 中包含真实报告、患者级结果和特征，集中存放不代表可以公开上传。PhysioNet 每位使用者需各自取得权限，数据使用遵循对应协议。代码 CI 仅检查提交边界和语法，不会下载数据或运行 GPU 实验。
 
-```cmd
-".venv\Scripts\python.exe" "download_images.py" --check-only
-".venv\Scripts\python.exe" "prepare_mimic_subset.py"
-".venv\Scripts\python.exe" "Step0\audit_dataset.py"
-```
+源码检查会同时检查工作区和 Git 暂存区。目录迁移后，暂存区仍有旧路径时会提示缺失；先用下面的 git add -A 记录迁移和删除，再检查后提交。当前工程不自动向远程仓库提交或推送。
 
-重建索引时保留 `subset/patient_selection.csv`，才能复现当前 5000 人；没有该名单时会重新抽样。审计不修改正式数据。
-
-## MedCLIP 小样本检查
+### 提交本次代码更新（CMD）
 
 ```cmd
-".venv-medclip\Scripts\python.exe" "Step0\check_medclip.py" --device cuda --batch-size 4
-start "" "outputs\medclip_check\pairs_5.html"
-```
-
-脚本从 train 固定抽取 16 对，使用官方 MedCLIPProcessor，严格加载本地完整权重，冻结骨干并设置 eval。以架构配置构建官方模型后加载 checkpoint，避免重复下载基础模型权重。首次仍需获取 Hugging Face 配置和 tokenizer；缓存就绪后可加 `--offline`。
-
-文本使用最大长度 77、固定长度 padding。16 对有 8 份报告截断；全量检查为 1721/5000，即 34.42%，详见本地 `outputs/text_statistics.json`。HTML 展示完整报告，模型输入按 77 token 截断。程序检查维度、有限值、单位范数与配对索引，不要求全部 Top1 正确，也不会自动确认临床语义人工复核完成。
-
-## GitHub 与多人开发
-
-GitHub 只管理源码、配置、依赖、假设、汇总检查说明和工作流。`raw/`、整个 `subset/`、整个 `outputs/`、本地模型仓库/权重、环境、日志和课堂 PDF 均已忽略。索引含报告正文，HTML 含真实胸片和报告，特征及逐患者结果也不进入代码仓库。不要用网页拖拽或 ZIP 上传整个项目目录，因为这些方式不使用本地 Git 的忽略规则。
-
-PhysioNet 数据使用协议要求不得共享受限数据访问权；每位参与数据处理的成员应取得相应资质和数据权限。数据和固定名单的交接应遵循对应协议与机构流程，不能因 GitHub 仓库设为 private 就直接上传。协议：https://physionet.org/content/mimic-cxr-jpg/view-dua/2.1.0/ 。
-
-所有成员必须使用同一份固定名单与索引；不要在缺少 `patient_selection.csv` 时各自重新抽样，然后混用缓存或指标。恢复当前子集至少需要合规获取的原始 metadata、CheXpert、报告及固定名单。新克隆的代码支持源码检查，但数据审计和 GPU 检查还需要本地数据、权重及 Hugging Face 资源。
-
-首次上传可在 CMD 执行下列命令。将远程地址替换为你自己的仓库；当前根目录尚未初始化 Git：
-
-```cmd
-git init -b main
-git add .gitignore .gitattributes README.md hypotheses.md configs Step0 download_images.py prepare_mimic_subset.py requirements-data.txt requirements-medclip.txt .github docs
+git add -A
+".venv-medclip\Scripts\python.exe" -B scripts\check_repository.py
 git status --short
-".venv\Scripts\python.exe" -B Step0\check_repository.py
-git commit -m "Initialize data preparation and MedCLIP checks"
-git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
-git push -u origin main
+git commit -m "Implement six configured entries and consolidated Step0 artifacts"
+git push
 ```
 
-源码检查只依赖 Python 标准库和 Git，新克隆后也可执行 `python -B Step0/check_repository.py`。它检查当前已跟踪与未忽略文件，并扫描工作区和暂存区内容，不审计既往 Git 历史，也不是完整的秘密扫描器。提交前检查必须为 PASS；不要使用 `git add -f` 绕过忽略规则。已跟踪的受限文件不会因新增 `.gitignore` 自动移除。
+确认检查为 PASS 后再提交；运行结果目录继续保留在本地。
 
-`.github/workflows/source-check.yml` 在 push/PR 后运行同一源码检查，不下载医疗数据、不使用 GPU。多人开发使用各自功能分支和 PR；修改数据规则、固定名单、配置或特征接口时先统一约定，不在各分支悄悄更换实验数据。详细检查结论见 `docs/readiness_check.md`。
-
-建议全量基础缓存接口为每个 split 一个 NPZ，键固定为 `patient_id`、`study_id`、`image_feature`、`text_feature`、`labels`、`mask`；特征 float32，形状 N×512，L2 归一化；标签和 mask 为 N×5，ID 为整数。另存元数据，包含 split、ID 顺序、模型与索引哈希、processor 参数、文本长度和截断率。此接口为后续实现约定，当前尚无全量缓存文件。
-
-## 下一阶段与最终交付
-
-1. 实现全量特征提取入口，按 train/val/test 保存 4000/500/500 条图文特征，两种均为 512 维；保存 patient_id、study_id、labels、mask，核查顺序、数值、归一化与患者不重叠。
-2. 使用与小样本检查一致的 processor、冻结骨干和文本参数，记录全量 token 长度/截断率、dtype、模型/代码版本、权重/索引/配置哈希、耗时与显存。
-3. 先在固定 val 候选库跑通 R0 双向 R@1/5/10、mAP，再接 A—D 度量头及仅训练集的难负样本挖掘。模型选择、开发和早停使用 val，test 用于最终评测。
-4. 完成共享/私有对照、五版本提示、固定 val 的几何分析、训练种子 42/43/44，以及逐查询结果、患者配对 bootstrap、案例和结论。提示按任务书处理，不改报告正文。
-5. 按任务书交付可运行源码、配置、索引、特征缓存、训练模型、必要实验日志及结果，并完成综述/实验报告和 15 分钟 PPT。正式实验日志需要保留。
-
-`.gitignore` 排除本地环境、原始数据、图片、权重和下载状态，便于管理源码；它不代表可以省略最终交付要求，也不代表可以公开分发受限数据。
+清理说明：保留用于交接的 `subset.rar`；`subset/` 中的源索引是下载和独立审计的输入，`outputs/Step0/indices/` 是交付快照。根目录 hypotheses.md 是版本化源文件，集中目录内为交付副本。已清除旧小样本训练产物、重复汇总日志和缓存；正式训练模型、曲线、耗时与显存记录、验证结果及几何结果保留。未来执行 --smoke-test 会重新生成 smoke_training/，这是正常的可再生调试输出。

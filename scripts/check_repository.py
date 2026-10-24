@@ -15,7 +15,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE_ROOTS = {'raw', 'subset', 'outputs', 'MedCLIP', 'tmp', '.cache', '.vscode', '.idea'}
-BINARY_SUFFIXES = {'.zip', '.bin', '.pt', '.pth', '.safetensors', '.npz', '.npy',
+BINARY_SUFFIXES = {'.zip', '.rar', '.7z', '.bin', '.pt', '.pth', '.safetensors', '.npz', '.npy',
                    '.jpg', '.jpeg', '.png', '.pdf', '.gz', '.pem', '.key', '.log'}
 SECRET_PATTERNS = [
     re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
@@ -102,9 +102,11 @@ def main():
             if path.suffix == '.json':
                 json.loads(content)
     required = {'README.md', '.gitignore', 'configs/default.json', 'hypotheses.md',
-                'requirements-data.txt', 'requirements-medclip.txt', 'prepare_mimic_subset.py',
-                'download_images.py', 'Step0/audit_dataset.py', 'Step0/check_medclip.py',
-                'Step0/check_repository.py'}
+                'requirements-medclip.txt', 'prepare_data.py', 'extract_features.py',
+                'train_metric.py', 'mine_negatives.py', 'evaluate_retrieval.py', 'analyze_geometry.py',
+                'scripts/download_images.py', 'scripts/audit_dataset.py', 'scripts/check_medclip.py',
+                'scripts/check_repository.py', 'docs/handoff.md'}
+    required.update({'mimic_pipeline/'+name+'.py' for name in ['__init__','common','checkpoint','data','features','metric','mining','retrieval','geometry']})
     errors.extend(f'Missing source entry: {name}' for name in sorted(required - set(files)))
     for name in files:
         print(name)
