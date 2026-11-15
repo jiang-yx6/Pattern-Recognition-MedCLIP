@@ -1,0 +1,75 @@
+direction,query_id,candidate_id,correct_id,rank,AP,correct_similarity,top1_similarity,high_frequency,low_frequency,kind,correct_report,top1_report
+I2T,52687055,52687055,52687055,1,1.0,0.5298247933387756,0.5298247933387756,False,False,success,"PA and lateral views of the chest.  The right Port-A-Cath ends in
+ the low SVC.  There is no focal consolidation, pleural effusion or
+ pneumothorax. The aorta is tortuous.  Clips are seen in the upper abdomen.","PA and lateral views of the chest.  The right Port-A-Cath ends in
+ the low SVC.  There is no focal consolidation, pleural effusion or
+ pneumothorax. The aorta is tortuous.  Clips are seen in the upper abdomen."
+I2T,54781713,54781713,54781713,1,1.0,0.6683600544929504,0.6683600544929504,True,False,success,"In comparison with the study of ___, there is continued
+ enlargement of the cardiac silhouette with pulmonary vascular congestion and
+ bilateral pleural effusions with compressive atelectasis.  Asymmetric
+ opacification at the right base could well reflect developing consolidation. 
+ Hilar prominence is again seen.","In comparison with the study of ___, there is continued
+ enlargement of the cardiac silhouette with pulmonary vascular congestion and
+ bilateral pleural effusions with compressive atelectasis.  Asymmetric
+ opacification at the right base could well reflect developing consolidation. 
+ Hilar prominence is again seen."
+I2T,52127593,52127593,52127593,1,1.0,0.5336483716964722,0.5336483716964722,False,False,success,"There is interval placement of a left-sided pigtail catheter with interval
+ decrease in the left pneumothorax which could still be seen superolaterally. 
+ There is volume loss at both bases and given the opacity early infiltrates
+ can't be excluded in these regions.  The upper lungs are clear","There is interval placement of a left-sided pigtail catheter with interval
+ decrease in the left pneumothorax which could still be seen superolaterally. 
+ There is volume loss at both bases and given the opacity early infiltrates
+ can't be excluded in these regions.  The upper lungs are clear"
+I2T,57480622,57480622,57480622,1,1.0,0.6424207091331482,0.6424207091331482,True,False,success,"Patchy right base opacity is seen, worrisome for pneumonia along with
+ atelectasis.  There is blunting of the right costophrenic angle of frontal
+ view although so not well substantiated on the lateral view.  There is minimal
+ left base atelectasis.  The patient is rotated somewhat to the right.  No
+ pneumothorax is seen.  The cardiac silhouette is top-normal in size.","Patchy right base opacity is seen, worrisome for pneumonia along with
+ atelectasis.  There is blunting of the right costophrenic angle of frontal
+ view although so not well substantiated on the lateral view.  There is minimal
+ left base atelectasis.  The patient is rotated somewhat to the right.  No
+ pneumothorax is seen.  The cardiac silhouette is top-normal in size."
+I2T,50442137,50442137,50442137,1,1.0,0.6559544801712036,0.6559544801712036,True,True,success,"As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter.","As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter."
+I2T,56285883,50731772,56285883,8,0.125,0.4730939269065857,0.48724061250686646,False,False,failure,"The heart size, mediastinal, and hilar contours are normal.  The lungs are
+ clear without pleural effusion, focal consolidation, or pneumothorax.  Osseous
+ structures are unremarkable.","PA and lateral radiographs of the chest demonstrate clear lungs and
+ normal hilar and cardiomediastinal contours.  There is no pneumothorax or
+ pleural effusion, and pulmonary vascularity is normal."
+I2T,51857131,56898494,51857131,144,0.006944444444444444,0.2827206552028656,0.5330290198326111,False,False,failure,No evidence of acute cardiopulmonary abnormalities.,"The lung volumes are low.  There is bibasilar atelectasis, and likely a small
+ left pleural effusion.  No pneumothorax.  There is engorgement of the
+ pulmonary vessels, new since ___, suggesting volume overload.
+ Cardiomediastinal silhouette is within normal limits.
+ 
+ Left pectoral pacemaker is appropriately positioned, with leads terminating in
+ the right atrium and right ventricle."
+I2T,51055127,59058578,51055127,32,0.03125,0.4584267735481262,0.5798074007034302,False,False,failure,"Concern for developing right upper lobe and unchanged left lower lobe
+ opacities concerning for multifocal infectious process.","There is a 7 x 8mm nodule in the left upper lobe with irregular borders.  No
+ prior chest imaging is available for comparison. There is bibasilar
+ atelectasis. An opacity at the right cardiophrenic angle represents prominent
+ pericardial fat, better demonstrated on CT abdomen performed the same date. 
+ No pneumothorax or large pleural effusions. Mediastinum, hila and heart are
+ within normal limits. Mild dextroscoliosis.  No acute osseous abnormalities."
+I2T,56973182,58436523,56973182,420,0.002380952380952381,0.21459084749221802,0.5033949613571167,True,False,failure,"There is no significant right lower lung opacity, minimal new atelectatic band
+ is seen at the left lung base.  The trachea is still slightly deviated towards
+ the right, which could be due to a thyroid abnormality.  There is no pleural
+ effusion or pneumothorax.","An ovoid density projecting over the left perihilar region at the eighth, may
+ represent an orthogonal imaged vessel and is stable from the prior study over
+ ___ years ago.  There is no evidence of suspicious opacities, there is no
+ pleural effusion or pneumothorax.  The cardiomediastinal silhouette and hila
+ are normal."
+I2T,50731594,59064671,50731594,7,0.14285714285714285,0.43127256631851196,0.45075371861457825,False,False,failure,"PA and lateral views of the chest are provided demonstrating
+ midline sternotomy wires and mediastinal clips.  The lungs are clear without
+ focal consolidation, effusion, or pneumothorax.  A focal eventration of the
+ right hemidiaphragm is again noted.  The heart and mediastinal contour appears
+ normal.  No signs of CHF.  The bony structures are intact.","PA and lateral views of the chest.  At the right lung base there is
+ pleural calcifications and chronic atelectasis or scarring.  No evidence of
+ pneumonia.  The heart, mediastinum, and hilum are normal.  No pneumothorax. 
+ No pleural effusion.  No pulmonary vascular congestion."

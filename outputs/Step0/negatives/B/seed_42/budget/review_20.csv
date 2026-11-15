@@ -1,0 +1,187 @@
+query_id,candidate_id,direction,similarity,weight,conflict,label_overlap,selection,query_report,candidate_report
+52201741,52031646,I2T,0.4179944694042206,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Portable chest radiograph demonstrates an endotracheal tube 5 cm above the
+ carina.  Although in appropriate position, care should be taken not to
+ withdraw the endotracheal tube any further.  An enteric tube descends in and
+ uncomplicated course, its terminal end not visualized.  Cardiomegaly is stable
+ appearing.  The lungs are grossly clear with mild vascular congestion and
+ small, if any, pleural bilateral effusions.  No pneumothorax."
+52201741,50616408,I2T,0.4046723246574402,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","The patient has been reintubated.  The endotracheal tube projects
+ very high, with the tip currently located 6.7 cm above the carina.  If
+ possible, the device should be advanced by approximately 2-3 cm.  The other
+ monitoring and support devices, including the chest tubes, are constant.  No
+ evidence of postoperative pneumothorax.  Unchanged retrocardiac atelectasis,
+ unchanged appearance of the cardiac silhouette.  No larger pleural effusions. 
+ Post-surgical devices projecting over the left aspects of the thoracic inlet
+ are in constant position."
+52201741,51236281,I2T,0.44890493154525757,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Indwelling support and monitoring devices are unchanged in
+ position, except for re-positioning of a left PICC, with the tip now at or
+ just below the cavoatrial junction.  Low lung volumes limit assessment of the
+ catheter as well as accentuate cardiomediastinal and bronchovascular
+ structures.  Allowing for this factor, cardiac silhouette is probably
+ unchanged in size.  Mild pulmonary vascular congestion is present, as well as
+ apparent worsening of bilateral lower lobe opacities which probably represent
+ atelectasis.  Small right pleural effusion is present as well as a possible
+ small left effusion, but there is no visible pneumothorax."
+52201741,50427784,I2T,0.42668938636779785,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","As compared to the previous radiograph, the pre-existing bilateral parenchymal
+ opacities have decreased in extent and severity but are still clearly visible
+ lung volumes remain very low and there is unchanged evidence of mild to
+ moderate pulmonary edema.  Borderline size of the cardiac silhouette.  The
+ monitoring and support devices are in correct position."
+52201741,50414294,I2T,0.4012383222579956,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","AP chest compared to ___:
+ 
+ Moderate increase in the global pulmonary opacification could be due to
+ decrease in positive pressure ventilator support or concurrent mild pulmonary
+ edema, in the setting of widespread pneumonia.  Pleural effusions are
+ presumed, but not substantial.  There is no pneumothorax.  ET tube in standard
+ placement.  Right subclavian line ends in the upper right atrium, as before. 
+ No pneumothorax."
+52201741,51868279,I2T,0.40519291162490845,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","In comparison with the earlier study of this date, the endotracheal
+ tube tip lies approximately 4.5 cm above the carina.  The gastric tube extends
+ well into the stomach with the side hole far beyond the esophagogastric
+ junction.  Otherwise, little change."
+52201741,51084138,I2T,0.3994944095611572,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Single supine AP portable view of the chest was obtained.  The
+ study was made available for my interpretation today, ___ at 3:15 p.m. 
+ Endotracheal tube is high in position, terminating approximately 8.5 cm above
+ the level of the carina, and should be advanced approximately 5 cm.  What
+ appears to be a nasogastric tube terminates over the mid chest in the midline,
+ presumed in the mid esophagus and is high in position.  The lungs are clear. 
+ The left costophrenic angle is not fully included on the image.  No large
+ pleural effusion or pneumothorax is seen.  Gaseous distention of the stomach
+ is noted."
+52201741,56740161,I2T,0.3941909372806549,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","In comparison with the study of ___, the tip of the endotracheal
+ tube measures approximately 3.8 cm above the carina.  Nasogastric tube extends
+ into the stomach where it crosses the lower margin of the image.
+ 
+ Continued enlargement of the cardiac silhouette with engorgement of indistinct
+ pulmonary vessels, consistent with elevated pulmonary venous pressure.  The
+ apparent widening of the mediastinum is not as well appreciated on the current
+ study.  Bibasilar atelectatic changes are again seen."
+52201741,56407588,I2T,0.39578503370285034,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Severe bilateral lower lobe atelectasis not appreciably changed. New upper
+ lobe vascular engorgement and dilated azygos vein reflects supine positioning.
+ Heart is normal size. There is no pulmonary edema. ET tube in standard
+ placement. No pneumothorax."
+52201741,52109310,I2T,0.39526763558387756,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volumes remain quite low exaggerating the slight interval increase in
+ pulmonary vascularity and in mediastinal venous caliber, nevertheless pointing
+ to volume overload. Right pleural effusion is small if any, and unchanged"
+52201741,50494286,I2T,0.40292784571647644,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","In comparison with the earlier study of this date, the left subclavian PICC
+ line is been pushed forward. Obliquity of the patient makes it somewhat
+ difficult to assess the position of the tip, though it appears to be in the
+ lower SVC.
+ 
+ NOTIFICATION:  ___, a venous access nurse."
+52201741,50308937,I2T,0.40372389554977417,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Pulmonary edema has improved.  Cardiomegaly is a stable.  Widening mediastinum
+ has improved.  There is no evident pneumothorax.  ET tube is in standard
+ position.  Dobhoff tube is coiled in the stomach.  The second NG tube tip is
+ in the stomach.  Right IJ catheter sheath tip is in the upper SVC.  Opacities
+ in the left base are a combination of effusion and atelectasis.  Left
+ perihilar consolidation is persistent"
+52201741,50128571,I2T,0.43445801734924316,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volumes are considerably lower today than on ___ which exaggerates
+ cardiomegaly, and is mediastinal vascular engorgement and pulmonary
+ congestion, but alternatively the patient could be mild heart failure and low
+ lung volumes are lower due to decrease compliance.  Pleural effusions are
+ small if any.  Right PIC line ends in the low SVC.  No pneumothorax."
+52201741,57209648,I2T,0.40768465399742126,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","In comparison with the earlier study of this date, there are
+ slightly lower lung volumes with increased engorgement of dilated pulmonary
+ vessels and enlargement of the cardiac silhouette, all consistent with
+ pulmonary edema.  There are tubes overlying the mediastinum that could well be
+ external to the patient.  What appears to be a nasogastric tube extends to the
+ stomach, though the side hole is difficult to identify."
+52201741,59512113,I2T,0.4622388780117035,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","A portable supine AP radiograph of the chest demonstrates that the
+ endotracheal tube is low lying, terminating only 2.3 cm above the carina.  The
+ orogastric tube terminates in the lower esophagus and should be advanced.  Low
+ lung volumes, mild cardiomegaly, as well as mild pulmonary edema are also
+ noted.  Small bilateral pleural effusions are better appreciated on the CT. 
+ There is no pneumothorax."
+52201741,50681748,I2T,0.3966817557811737,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Postoperative pulmonary edema has improved, now mild. Heart size top-normal.
+ Mediastinal veins slightly less distended today than before. Pleural effusions
+ are small if any.  Borderline cardiomegaly is not appreciably changed since
+ surgery."
+52201741,50540811,I2T,0.39501819014549255,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","The patient is status post median sternotomy and esophagectomy
+ procedure.  Endotracheal tube remains in place, with tip terminating about 2.5
+ cm above the carina.  Other indwelling devices are unchanged in position. 
+ Widening of right mediastinal contours consistent with neoesophagus.  As
+ compared to the recent study, right basilar atelectasis and effusion have
+ slightly improved, but there is no substantial change in the moderate left
+ pleural effusion and left lower lobe collapse.  A curvilinear opacity in left
+ upper hemithorax at level of the left fourth posterior rib is concerning for a
+ small pneumothorax.  This finding communicated to Dr. ___ by telephone on
+ ___ at 9:45 a.m. at the time of discovery."
+52201741,52336599,I2T,0.3955613970756531,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","The tip of the intra-aortic balloon pump is low lying and situated 5.8 cm
+ below the aortic knob.  The ET tube remains in appropriate position with the
+ tip terminating 4.1 cm above the carina.  Remaining lines and tubes are in
+ unchanged positions.  There is mild bilateral pulmonary vascular congestion. 
+ The cardiomediastinal silhouette is unchanged.  There is no pleural effusion
+ or pneumothorax."
+52201741,50023747,I2T,0.4013553857803345,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Supine portable view of the chest demonstrates left internal jugular central
+ venous catheter tip projecting over cavoatrial junction.  No pneumothorax. 
+ The endotracheal tube terminates 4 cm above the carina.  Nasogastric tube
+ terminates within the esophagus.  Low lung volumes accentuate bronchovascular
+ markings.  Hilar and mediastinal silhouettes are unchanged.  Heart is
+ moderately enlarged."
+52201741,50810104,I2T,0.4060880243778229,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","As compared to the previous radiograph, no relevant change is seen.  The lung
+ volumes remain low.  Borderline size of the cardiac silhouette is unchanged. 
+ Unchanged correct position of the monitoring and support devices.  The
+ pre-existing gastric distension might have slightly decreased in severity.  On
+ the other hand, new blunting of the costophrenic sinuses might suggest mild
+ bilateral pleural effusions.  The overall appearance of the lung parenchyma is
+ unchanged."

@@ -1,0 +1,122 @@
+[
+  {
+    "comparison": "B-A",
+    "seed": 42,
+    "metric": "bidirectional_R@5",
+    "delta": -0.005,
+    "lower_95": -0.025,
+    "upper_95": 0.012,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "B-A",
+    "seed": 43,
+    "metric": "bidirectional_R@5",
+    "delta": 0.017,
+    "lower_95": 0.001,
+    "upper_95": 0.034,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "B-A",
+    "seed": 44,
+    "metric": "bidirectional_R@5",
+    "delta": 0.018,
+    "lower_95": 0.001,
+    "upper_95": 0.03402499999999998,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-C",
+    "seed": 42,
+    "metric": "bidirectional_R@5",
+    "delta": 0.015,
+    "lower_95": -0.003,
+    "upper_95": 0.033,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-C",
+    "seed": 43,
+    "metric": "bidirectional_R@5",
+    "delta": 0.003,
+    "lower_95": -0.016,
+    "upper_95": 0.021,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-C",
+    "seed": 44,
+    "metric": "bidirectional_R@5",
+    "delta": -0.007,
+    "lower_95": -0.024,
+    "upper_95": 0.01,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "C-A",
+    "seed": 42,
+    "metric": "bidirectional_R@5",
+    "delta": 0.0,
+    "lower_95": -0.017,
+    "upper_95": 0.018,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "C-A",
+    "seed": 43,
+    "metric": "bidirectional_R@5",
+    "delta": 0.009,
+    "lower_95": -0.006024999999999999,
+    "upper_95": 0.025,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "C-A",
+    "seed": 44,
+    "metric": "bidirectional_R@5",
+    "delta": 0.015,
+    "lower_95": -0.005,
+    "upper_95": 0.034,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-B",
+    "seed": 42,
+    "metric": "bidirectional_R@5",
+    "delta": 0.02,
+    "lower_95": 0.003,
+    "upper_95": 0.038,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-B",
+    "seed": 43,
+    "metric": "bidirectional_R@5",
+    "delta": -0.005,
+    "lower_95": -0.021,
+    "upper_95": 0.011,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  },
+  {
+    "comparison": "D-B",
+    "seed": 44,
+    "metric": "bidirectional_R@5",
+    "delta": -0.01,
+    "lower_95": -0.024,
+    "upper_95": 0.004,
+    "iterations": 1000,
+    "resampling": "paired queries; fixed candidate library"
+  }
+]

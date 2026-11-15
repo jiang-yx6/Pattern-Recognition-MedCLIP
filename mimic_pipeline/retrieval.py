@@ -1,7 +1,7 @@
 import json
 import numpy as np
 import pandas as pd
-from .common import LABELS, Runtime, device_for, load_cache, load_config, manifest_path, output, parser, seed_all, write_json
+from .common import LABELS, Runtime, device_for, load_cache, load_config, manifest_path, output, parser, results, seed_all, write_json
 from .metric import load_head, ranks, transform_cache
 
 
@@ -17,7 +17,7 @@ def group_masks(c, cache):
 
 def evaluate_one(c, cache, method, seed, split, prompts, device):
     head=load_head(c,method,seed,device)
-    destination=output(c,'evaluation',split,method,f'seed_{seed}' if seed is not None else 'frozen',f'prompts_{prompts}')
+    destination=results(c,'evaluation',split,method,f'seed_{seed}' if seed is not None else 'frozen',f'prompts_{prompts}')
     destination.mkdir(parents=True,exist_ok=True)
     with Runtime(device) as runtime:
         v,t=transform_cache(cache,head,device,prompts)
@@ -58,7 +58,7 @@ def bootstrap_differences(c, split, methods, seeds):
     iterations=c['evaluation']['bootstrap_iterations'];rng=np.random.default_rng(c['seed']);rows=[]
     def query(method,seed,prompts):
         folder=f'seed_{seed}' if method!='R0' else 'frozen'
-        return pd.read_csv(output(c,'evaluation',split,method,folder,f'prompts_{prompts}/query_ranks.csv'))
+        return pd.read_csv(results(c,'evaluation',split,method,folder,f'prompts_{prompts}/query_ranks.csv'))
     comparisons=[('B','A'),('D','C'),('C','A'),('D','B')]
     for after,before in comparisons:
         if after not in methods or before not in methods:continue
@@ -93,7 +93,7 @@ def main():
                 for prompts in prompt_counts:
                     rows.extend(evaluate_one(c,cache,method,seed,split,prompts,device))
                     print(f'Evaluated {split} {method} seed={seed} prompts={prompts}',flush=True)
-    result=pd.DataFrame(rows);base=output(c,'evaluation',split)
+    result=pd.DataFrame(rows);base=results(c,'evaluation',split)
     result.to_csv(base/'metrics.csv',index=False)
     result.groupby(['method','prompts','direction','group'])[['R@1','R@5','R@10','mAP']].agg(['mean','std']).to_csv(base/'mean_std.csv')
     if 1 in prompt_counts:

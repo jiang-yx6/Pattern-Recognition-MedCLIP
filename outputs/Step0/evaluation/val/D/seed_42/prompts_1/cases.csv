@@ -1,0 +1,78 @@
+direction,query_id,candidate_id,correct_id,rank,AP,correct_similarity,top1_similarity,high_frequency,low_frequency,kind,correct_report,top1_report
+I2T,58095819,58095819,58095819,1,1.0,0.4044439196586609,0.4044439196586609,False,False,success,"Normal heart, lungs, hila, mediastinum, and pleural surfaces.","Normal heart, lungs, hila, mediastinum, and pleural surfaces."
+I2T,50549548,50549548,50549548,1,1.0,0.47001394629478455,0.47001394629478455,True,True,success,"Mild to moderate cardiomegaly appears slightly increased in size compared to
+ the prior study.  Moderate pulmonary edema is substantially worse in the
+ interval with moderate to large bilateral pleural effusions, right greater
+ than left.  Bibasilar airspace opacities, more pronounced on the right, likely
+ reflect areas of compressive atelectasis though infection is not excluded.  No
+ pneumothorax is present.","Mild to moderate cardiomegaly appears slightly increased in size compared to
+ the prior study.  Moderate pulmonary edema is substantially worse in the
+ interval with moderate to large bilateral pleural effusions, right greater
+ than left.  Bibasilar airspace opacities, more pronounced on the right, likely
+ reflect areas of compressive atelectasis though infection is not excluded.  No
+ pneumothorax is present."
+I2T,51159869,51159869,51159869,1,1.0,0.3883448541164398,0.3883448541164398,False,True,success,"Relatively similar overall appearance of the chest except for
+ worsening heterogeneous consolidation in the right mid and lower lung, likely
+ due to evolving pneumonia.  Other findings including pulmonary edema,
+ neoplastic mass in superior segment left lower lobe, and postoperative
+ alterations in the left lung as well as bilateral pleural opacities appear
+ unchanged.","Relatively similar overall appearance of the chest except for
+ worsening heterogeneous consolidation in the right mid and lower lung, likely
+ due to evolving pneumonia.  Other findings including pulmonary edema,
+ neoplastic mass in superior segment left lower lobe, and postoperative
+ alterations in the left lung as well as bilateral pleural opacities appear
+ unchanged."
+I2T,50814392,50814392,50814392,1,1.0,0.46215611696243286,0.46215611696243286,False,True,success,"Heart size is normal. There is rightward tracheal deviation. There is mild
+ vascular engorgement and perihilar opacities suggestive of mild pulmonary
+ edema. There is a right middle and right lower lobe opacity which could be
+ related to edema, aspiration or infection. There are small bilateral pleural
+ effusions, right greater than left. No pneumothorax is seen.  Additionally,
+ there is some tracheal deviation to the right, which may be due to thyroid
+ enlargement/goiter.","Heart size is normal. There is rightward tracheal deviation. There is mild
+ vascular engorgement and perihilar opacities suggestive of mild pulmonary
+ edema. There is a right middle and right lower lobe opacity which could be
+ related to edema, aspiration or infection. There are small bilateral pleural
+ effusions, right greater than left. No pneumothorax is seen.  Additionally,
+ there is some tracheal deviation to the right, which may be due to thyroid
+ enlargement/goiter."
+I2T,50442137,50442137,50442137,1,1.0,0.4955862760543823,0.4955862760543823,True,True,success,"As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter.","As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter."
+I2T,56285883,51809953,56285883,32,0.03125,0.4189937710762024,0.44130581617355347,False,False,failure,"The heart size, mediastinal, and hilar contours are normal.  The lungs are
+ clear without pleural effusion, focal consolidation, or pneumothorax.  Osseous
+ structures are unremarkable.","The lungs are well expanded and clear without evidence of focal consolidation,
+ pleural effusion, pneumothorax, or pulmonary edema.  The cardiomediastinal
+ silhouette is within normal limits."
+I2T,51857131,57480622,51857131,118,0.00847457627118644,0.3261863887310028,0.46941938996315,False,False,failure,No evidence of acute cardiopulmonary abnormalities.,"Patchy right base opacity is seen, worrisome for pneumonia along with
+ atelectasis.  There is blunting of the right costophrenic angle of frontal
+ view although so not well substantiated on the lateral view.  There is minimal
+ left base atelectasis.  The patient is rotated somewhat to the right.  No
+ pneumothorax is seen.  The cardiac silhouette is top-normal in size."
+I2T,51055127,50149837,51055127,3,0.3333333333333333,0.4011760354042053,0.4527934193611145,False,False,failure,"Concern for developing right upper lobe and unchanged left lower lobe
+ opacities concerning for multifocal infectious process.","Status post right vats biopsy.  A right chest tube is in correct position. 
+ The pre-existing parenchymal opacities on the right are equally widespread as
+ on the previous examination. Calcified lymph node in the right paratracheal
+ region. The opacities on the left are constant. However, in the interval, a
+ small left pleural effusion has newly occurred.  Normal size of the cardiac
+ silhouette.  Unchanged correct position of a right pleural drain."
+I2T,56973182,59535600,56973182,440,0.0022727272727272726,0.08622884750366211,0.3641687333583832,True,False,failure,"There is no significant right lower lung opacity, minimal new atelectatic band
+ is seen at the left lung base.  The trachea is still slightly deviated towards
+ the right, which could be due to a thyroid abnormality.  There is no pleural
+ effusion or pneumothorax.","There is a patchy right basilar opacity, which could be due to superimposed
+ vascular structures, although a pneumonia cannot be excluded.  There is no
+ pneumothorax or pleural effusion.  Cardiac and mediastinal silhouette is
+ within normal limits."
+I2T,50731594,56847379,50731594,268,0.0037313432835820895,0.3113442659378052,0.37139007449150085,False,False,failure,"PA and lateral views of the chest are provided demonstrating
+ midline sternotomy wires and mediastinal clips.  The lungs are clear without
+ focal consolidation, effusion, or pneumothorax.  A focal eventration of the
+ right hemidiaphragm is again noted.  The heart and mediastinal contour appears
+ normal.  No signs of CHF.  The bony structures are intact.","As compared to the previous radiograph, there is no relevant
+ change.  The lung volumes are normal.  Moderate scoliosis.  Borderline size of
+ the cardiac silhouette, normal hilar and mediastinal contours.  No acute or
+ chronic lung disease.  No evidence of sarcoid or lymphoma."

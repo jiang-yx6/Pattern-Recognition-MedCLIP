@@ -1,0 +1,79 @@
+direction,query_id,candidate_id,correct_id,rank,AP,correct_similarity,top1_similarity,high_frequency,low_frequency,kind,correct_report,top1_report
+I2T,54781713,54781713,54781713,1,1.0,0.6550101637840271,0.6550101637840271,True,False,success,"In comparison with the study of ___, there is continued
+ enlargement of the cardiac silhouette with pulmonary vascular congestion and
+ bilateral pleural effusions with compressive atelectasis.  Asymmetric
+ opacification at the right base could well reflect developing consolidation. 
+ Hilar prominence is again seen.","In comparison with the study of ___, there is continued
+ enlargement of the cardiac silhouette with pulmonary vascular congestion and
+ bilateral pleural effusions with compressive atelectasis.  Asymmetric
+ opacification at the right base could well reflect developing consolidation. 
+ Hilar prominence is again seen."
+I2T,50442137,50442137,50442137,1,1.0,0.6323844790458679,0.6323844790458679,True,True,success,"As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter.","As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter."
+I2T,51212919,51212919,51212919,1,1.0,0.6374881863594055,0.6374881863594055,False,False,success,"ET tube tip is 6 cm above the carinal.  Right central venous line tip is in
+ the cavoatrial junction.  Heart size and mediastinum are stable.  Multifocal
+ opacities have slightly improved in the interim,","ET tube tip is 6 cm above the carinal.  Right central venous line tip is in
+ the cavoatrial junction.  Heart size and mediastinum are stable.  Multifocal
+ opacities have slightly improved in the interim,"
+I2T,56847379,56847379,56847379,1,1.0,0.40575218200683594,0.40575218200683594,True,False,success,"As compared to the previous radiograph, there is no relevant
+ change.  The lung volumes are normal.  Moderate scoliosis.  Borderline size of
+ the cardiac silhouette, normal hilar and mediastinal contours.  No acute or
+ chronic lung disease.  No evidence of sarcoid or lymphoma.","As compared to the previous radiograph, there is no relevant
+ change.  The lung volumes are normal.  Moderate scoliosis.  Borderline size of
+ the cardiac silhouette, normal hilar and mediastinal contours.  No acute or
+ chronic lung disease.  No evidence of sarcoid or lymphoma."
+I2T,50900590,50900590,50900590,1,1.0,0.7458068132400513,0.7458068132400513,True,True,success,"Frontal and lateral views of the chest were obtained.  The patient
+ is status post median sternotomy and CABG.  Again seen is a moderate right
+ pleural effusion with overlying atelectasis, underlying consolidation cannot
+ be excluded.  There is left base atelectasis without left pleural effusion
+ seen.  The cardiac silhouette is top normal, although the right aspect of the
+ cardiac silhouette is not well assessed due to the right base opacity.  The
+ aorta is calcified and tortuous.  There may be minimal pulmonary vascular
+ congestion without overt interstitial edema.","Frontal and lateral views of the chest were obtained.  The patient
+ is status post median sternotomy and CABG.  Again seen is a moderate right
+ pleural effusion with overlying atelectasis, underlying consolidation cannot
+ be excluded.  There is left base atelectasis without left pleural effusion
+ seen.  The cardiac silhouette is top normal, although the right aspect of the
+ cardiac silhouette is not well assessed due to the right base opacity.  The
+ aorta is calcified and tortuous.  There may be minimal pulmonary vascular
+ congestion without overt interstitial edema."
+I2T,56285883,50731772,56285883,4,0.25,0.42884182929992676,0.4328364133834839,False,False,failure,"The heart size, mediastinal, and hilar contours are normal.  The lungs are
+ clear without pleural effusion, focal consolidation, or pneumothorax.  Osseous
+ structures are unremarkable.","PA and lateral radiographs of the chest demonstrate clear lungs and
+ normal hilar and cardiomediastinal contours.  There is no pneumothorax or
+ pleural effusion, and pulmonary vascularity is normal."
+I2T,51857131,56439935,51857131,89,0.011235955056179775,0.32756805419921875,0.501028835773468,False,False,failure,No evidence of acute cardiopulmonary abnormalities.,"The lung volumes are low.  Mild fluid overload but no overt pulmonary edema. 
+ Bilateral basal areas of atelectasis.  The symmetry of the changes favors
+ atelectasis over pneumonia.  No pleural effusions.  Mild cardiomegaly.  Mild
+ elongation of the descending aorta."
+I2T,51055127,59058578,51055127,20,0.05,0.4949692487716675,0.5779109001159668,False,False,failure,"Concern for developing right upper lobe and unchanged left lower lobe
+ opacities concerning for multifocal infectious process.","There is a 7 x 8mm nodule in the left upper lobe with irregular borders.  No
+ prior chest imaging is available for comparison. There is bibasilar
+ atelectasis. An opacity at the right cardiophrenic angle represents prominent
+ pericardial fat, better demonstrated on CT abdomen performed the same date. 
+ No pneumothorax or large pleural effusions. Mediastinum, hila and heart are
+ within normal limits. Mild dextroscoliosis.  No acute osseous abnormalities."
+I2T,56973182,50229298,56973182,434,0.002304147465437788,0.1856287717819214,0.4396739602088928,True,False,failure,"There is no significant right lower lung opacity, minimal new atelectatic band
+ is seen at the left lung base.  The trachea is still slightly deviated towards
+ the right, which could be due to a thyroid abnormality.  There is no pleural
+ effusion or pneumothorax.","In comparison with the study of ___, there is little change and
+ no evidence of acute cardiopulmonary disease.  Hyperexpansion of the lungs,
+ but no acute pneumonia, vascular congestion, or pleural effusion.
+ 
+ Of incidental note is a calcification projected over the left renal outline. 
+ This could represent either a renal calculus or vascular calcification."
+I2T,50731594,57564088,50731594,5,0.2,0.4038088321685791,0.4166865944862366,False,False,failure,"PA and lateral views of the chest are provided demonstrating
+ midline sternotomy wires and mediastinal clips.  The lungs are clear without
+ focal consolidation, effusion, or pneumothorax.  A focal eventration of the
+ right hemidiaphragm is again noted.  The heart and mediastinal contour appears
+ normal.  No signs of CHF.  The bony structures are intact.","Cardiac silhouette size is normal. The aorta is mildly tortuous. Mediastinal
+ and hilar contours are unremarkable. Lungs are hyperinflated but clear without
+ focal consolidation.  No pleural effusion or pneumothorax is identified. Mild
+ degenerative changes are seen in the thoracic spine."

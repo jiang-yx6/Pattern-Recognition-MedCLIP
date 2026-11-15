@@ -1,0 +1,76 @@
+direction,query_id,candidate_id,correct_id,rank,AP,correct_similarity,top1_similarity,high_frequency,low_frequency,kind,correct_report,top1_report
+I2T,50929560,50929560,50929560,1,1.0,0.5067294836044312,0.5067294836044312,False,False,success,"Portable AP view of the chest.  Low lung volumes are seen with
+ secondary crowding of the bronchovascular markings.  Cardiomediastinal
+ silhouette accentuated due to portable technique and low lung volumes but is
+ likely within normal limits.  No definite acute osseous abnormality
+ identified.  Orthopedic screws seen in the left femoral head.","Portable AP view of the chest.  Low lung volumes are seen with
+ secondary crowding of the bronchovascular markings.  Cardiomediastinal
+ silhouette accentuated due to portable technique and low lung volumes but is
+ likely within normal limits.  No definite acute osseous abnormality
+ identified.  Orthopedic screws seen in the left femoral head."
+I2T,50390534,50390534,50390534,1,1.0,0.5100916028022766,0.5100916028022766,True,False,success,"In comparison with the study of ___, there again are chest tubes in
+ place on the right related to the VATS pleurodesis.  No evidence of
+ pneumothorax.
+ Continued opacification at the right base is consistent with pleural fluid and
+ atelectatic and post surgical change.","In comparison with the study of ___, there again are chest tubes in
+ place on the right related to the VATS pleurodesis.  No evidence of
+ pneumothorax.
+ Continued opacification at the right base is consistent with pleural fluid and
+ atelectatic and post surgical change."
+I2T,51387793,51387793,51387793,1,1.0,0.48853185772895813,0.48853185772895813,False,False,success,"AP chest compared to ___:
+ 
+ Dobbhoff tube, with a wire stylet withdrawn 2 cm from the tip, ends in the
+ very upper stomach.  Lungs clear.  Normal cardiomediastinal and hilar
+ silhouettes and pleural surfaces.","AP chest compared to ___:
+ 
+ Dobbhoff tube, with a wire stylet withdrawn 2 cm from the tip, ends in the
+ very upper stomach.  Lungs clear.  Normal cardiomediastinal and hilar
+ silhouettes and pleural surfaces."
+I2T,50442137,50442137,50442137,1,1.0,0.6503576636314392,0.6503576636314392,True,True,success,"As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter.","As compared to the previous radiograph, the lung volumes have decreased. 
+ There are now small bilateral pleural effusions and signs of mild pulmonary
+ edema.  Moderate cardiomegaly persists.  Mild bilateral basal areas of
+ atelectasis.  Unchanged alignment of the sternal wires.  Unchanged position of
+ the right internal jugular vein catheter."
+I2T,51212919,51212919,51212919,1,1.0,0.5588865876197815,0.5588865876197815,False,False,success,"ET tube tip is 6 cm above the carinal.  Right central venous line tip is in
+ the cavoatrial junction.  Heart size and mediastinum are stable.  Multifocal
+ opacities have slightly improved in the interim,","ET tube tip is 6 cm above the carinal.  Right central venous line tip is in
+ the cavoatrial junction.  Heart size and mediastinum are stable.  Multifocal
+ opacities have slightly improved in the interim,"
+I2T,56285883,54708034,56285883,4,0.25,0.4515105187892914,0.4539506435394287,False,False,failure,"The heart size, mediastinal, and hilar contours are normal.  The lungs are
+ clear without pleural effusion, focal consolidation, or pneumothorax.  Osseous
+ structures are unremarkable.","The heart is normal in size.  The mediastinal and hilar contours
+ appear within normal limits.  There is no pleural effusion or pneumothorax. 
+ The lungs appear clear.  The bony structures appear within normal limits."
+I2T,51857131,53498162,51857131,339,0.0029498525073746312,0.3418446183204651,0.5060679912567139,False,False,failure,No evidence of acute cardiopulmonary abnormalities.,"There are nondisplaced fractures of the left posterolateral sixth
+ and seventh ribs with an equivocal nondisplaced fifth rib fracture.  Minimal
+ pleural thickening is noted at each lung apex.  The lungs appear otherwise
+ clear.  There is no evidence for pleural effusion or pneumothorax."
+I2T,51055127,50149837,51055127,32,0.03125,0.3896476626396179,0.466042697429657,False,False,failure,"Concern for developing right upper lobe and unchanged left lower lobe
+ opacities concerning for multifocal infectious process.","Status post right vats biopsy.  A right chest tube is in correct position. 
+ The pre-existing parenchymal opacities on the right are equally widespread as
+ on the previous examination. Calcified lymph node in the right paratracheal
+ region. The opacities on the left are constant. However, in the interval, a
+ small left pleural effusion has newly occurred.  Normal size of the cardiac
+ silhouette.  Unchanged correct position of a right pleural drain."
+I2T,56973182,59771036,56973182,425,0.002352941176470588,0.2182980179786682,0.45481234788894653,True,False,failure,"There is no significant right lower lung opacity, minimal new atelectatic band
+ is seen at the left lung base.  The trachea is still slightly deviated towards
+ the right, which could be due to a thyroid abnormality.  There is no pleural
+ effusion or pneumothorax.","The heart size is normal.  The hilar and mediastinal contours are normal.  The
+ lungs are clear without evidence of focal consolidations concerning for
+ pneumonia.  There is no evidence of pneumomediastinum or pneumothorax.  There
+ is no pleural effusion.  The visualized osseous structures are unremarkable."
+I2T,50731594,50225811,50731594,16,0.0625,0.4329947233200073,0.44924116134643555,False,False,failure,"PA and lateral views of the chest are provided demonstrating
+ midline sternotomy wires and mediastinal clips.  The lungs are clear without
+ focal consolidation, effusion, or pneumothorax.  A focal eventration of the
+ right hemidiaphragm is again noted.  The heart and mediastinal contour appears
+ normal.  No signs of CHF.  The bony structures are intact.","AP upright and lateral views of the chest provided.
+ 
+ There is no focal consolidation, effusion, or pneumothorax.  The heart is
+ normal in size.  There is prominence of the mediastinum which could reflect
+ lipomatosis though clinical correlation advised.  The mediastinal margins are
+ sharp.  Imaged osseous structures are intact.  No free air below the right
+ hemidiaphragm is seen."

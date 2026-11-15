@@ -1,0 +1,40 @@
+{
+  "checkpoint": "E:\\MIMIC\\MedCLIP\\pytorch_model.bin",
+  "bytes": 546888925,
+  "sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+  "zip_crc_passed": true,
+  "swin_and_text_keys_present": true,
+  "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+  "status": "smoke_test_passed",
+  "actual_output_dimension": 512,
+  "forward_pass_verified": true,
+  "vision_config_revision": "d00d478bfaf1f417d34a1186673ad4b4be264c51",
+  "text_config_revision": "d5892b39a4adaed74b92212a44081509db72f87b",
+  "samples": 16,
+  "batch_size": 4,
+  "text_max_length": 77,
+  "truncated_reports": 8,
+  "truncation_fraction": 0.5,
+  "similarity_shape": [
+    16,
+    16
+  ],
+  "dtype": "float32",
+  "normalization": "L2",
+  "strict_checkpoint_load": true,
+  "backbone_frozen": true,
+  "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+  "config_sha256": "6d966a1a8676099bfbc102a6fdb270652ecf6390fea7ba338849af2ebe690a03",
+  "human_review_required": true,
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "transformers": "4.24.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "Pillow": "9.5.0"
+  },
+  "elapsed_seconds": 10.806799700018018,
+  "peak_cuda_memory_mib": 637.50537109375,
+  "device": "cuda"
+}

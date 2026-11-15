@@ -15,6 +15,7 @@
   "smoke_split": "train",
   "smoke_output": "outputs/medclip_check",
   "step0_dir": "outputs/Step0",
+  "step1_dir": "outputs/Step1",
   "methods": [
     "R0",
     "A",

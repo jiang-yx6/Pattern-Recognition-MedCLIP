@@ -1,0 +1,313 @@
+{
+  "audit_timestamp_host": "2026-10-21T20:24:38.094740+08:00",
+  "client_date": "2026-10-21",
+  "root": "E:\\MIMIC",
+  "checks": [
+    {
+      "check": "required_manifest_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "5000_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "5000_unique_patients",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "5000_unique_studies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "5000_unique_image_paths",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "manifest_row_alignment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_empty_reports",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "split_4000_500_500",
+      "passed": true,
+      "detail": {
+        "train": 4000,
+        "test": 500,
+        "val": 500
+      }
+    },
+    {
+      "check": "no_patient_leakage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "split_seed_42_reproduces",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "labels_masks_shape_binary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed_label_order",
+      "passed": true,
+      "detail": [
+        "Atelectasis",
+        "Cardiomegaly",
+        "Consolidation",
+        "Edema",
+        "Pleural Effusion"
+      ]
+    },
+    {
+      "check": "metadata_join_ids_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "only_AP_PA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "labels_mask_match_original_chexpert",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "full_index_original_labels_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "paths_match_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "download_urls_match_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "first_frontal_study_and_first_dicom",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "strict_study_before_view_order",
+      "passed": true,
+      "detail": {
+        "deviations": 0,
+        "first_study_without_frontal": 0
+      }
+    },
+    {
+      "check": "all_original_reports_found_and_sections_match",
+      "passed": true,
+      "detail": {
+        "section_counts": {
+          "FINDINGS": 3980,
+          "IMPRESSION": 1020
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "frozen_patient_selection_matches_manifest",
+      "passed": true,
+      "detail": {
+        "policy": "fixed_subset_v1",
+        "patient_count": 5000
+      }
+    },
+    {
+      "check": "saved_class_statistics_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "frequency_groups_train_only_match",
+      "passed": true,
+      "detail": {
+        "high_frequency": [
+          "Atelectasis",
+          "Cardiomegaly"
+        ],
+        "middle_frequency": [
+          "Pleural Effusion"
+        ],
+        "low_frequency": [
+          "Edema",
+          "Consolidation"
+        ]
+      }
+    },
+    {
+      "check": "5000_images_present_and_fully_decodable",
+      "passed": true,
+      "detail": {
+        "errors": 0
+      }
+    },
+    {
+      "check": "images_match_metadata_dimensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_constant_grayscale_images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "on_disk_image_inventory_matches_manifest",
+      "passed": true,
+      "detail": {
+        "extra": [],
+        "missing": []
+      }
+    },
+    {
+      "check": "no_exact_duplicate_image_files",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "manifest_unchanged_during_audit",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed_checks": 30,
+  "total_checks": 30,
+  "failed_checks": [],
+  "sample_count": 5000,
+  "patients": 5000,
+  "split_counts": {
+    "train": 4000,
+    "test": 500,
+    "val": 500
+  },
+  "view_counts": {
+    "PA": 2948,
+    "AP": 2052
+  },
+  "images": {
+    "present": 5000,
+    "decode_passed": 5000,
+    "missing": 0,
+    "decode_failed": 0,
+    "bytes": 8847707077,
+    "modes": {
+      "L": 5000
+    },
+    "min_width_height": [
+      1446,
+      1385
+    ],
+    "max_width_height": [
+      3056,
+      3056
+    ],
+    "exact_duplicate_groups": []
+  },
+  "reports": {
+    "section_counts": {
+      "FINDINGS": 3980,
+      "IMPRESSION": 1020
+    },
+    "missing_or_mismatched": 0,
+    "duplicate_rows_beyond_first": 466,
+    "cross_split_equal_text_counts": {
+      "train_val": 40,
+      "train_test": 41,
+      "val_test": 20
+    }
+  },
+  "all_five_masks_zero": {
+    "train": 2456,
+    "val": 331,
+    "test": 309
+  },
+  "class_statistics": [
+    {
+      "disease": "Atelectasis",
+      "positive_count": 492,
+      "negative_count": 19,
+      "valid_count": 511,
+      "uncertain_or_missing": 3489
+    },
+    {
+      "disease": "Cardiomegaly",
+      "positive_count": 491,
+      "negative_count": 219,
+      "valid_count": 710,
+      "uncertain_or_missing": 3290
+    },
+    {
+      "disease": "Pleural Effusion",
+      "positive_count": 429,
+      "negative_count": 418,
+      "valid_count": 847,
+      "uncertain_or_missing": 3153
+    },
+    {
+      "disease": "Edema",
+      "positive_count": 246,
+      "negative_count": 394,
+      "valid_count": 640,
+      "uncertain_or_missing": 3360
+    },
+    {
+      "disease": "Consolidation",
+      "positive_count": 89,
+      "negative_count": 174,
+      "valid_count": 263,
+      "uncertain_or_missing": 3737
+    }
+  ],
+  "frequency_groups": {
+    "high_frequency": [
+      "Atelectasis",
+      "Cardiomegaly"
+    ],
+    "middle_frequency": [
+      "Pleural Effusion"
+    ],
+    "low_frequency": [
+      "Edema",
+      "Consolidation"
+    ]
+  },
+  "study_selection": {
+    "strict_order_deviations": 0,
+    "deviations_by_split": {},
+    "all_deviations_first_study_without_AP_PA": true
+  },
+  "manifest_sha256": {
+    "mimic_5000.csv": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+    "mimic_5000_full.csv": "ca16d26e237e5594aa8028c8491f34415f0d0f93a944827000ac0dd4a66bd81a"
+  },
+  "elapsed_seconds": 167.01,
+  "limits": [
+    "Successful full decode detects truncation/decoder errors, not every possible silent pixel modification.",
+    "Patient/study IDs and sections were checked against local source files; source release provenance and account authorization are not independently established by this audit.",
+    "Clinical correspondence of images and reports still requires the prescribed five-pair human review.",
+    "Processor/token truncation, 16-pair model execution, feature caching, and hypotheses.md are separate Step0 implementation requirements."
+  ]
+}

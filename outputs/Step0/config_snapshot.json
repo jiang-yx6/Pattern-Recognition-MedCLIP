@@ -1,0 +1,117 @@
+{
+  "seed": 42,
+  "manifest": "subset/mimic_5000.csv",
+  "label_names": "subset/label_names.json",
+  "model_repository": "MedCLIP",
+  "checkpoint": "MedCLIP/pytorch_model.bin",
+  "expected_checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+  "expected_medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+  "expected_manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+  "expected_selection_sha256": "5128ce340f52a893a4ac40897c3a45281bb8c794083a23e123a638bb6cf65d8e",
+  "device": "cuda",
+  "batch_size": 4,
+  "text_max_length": 77,
+  "smoke_samples": 16,
+  "smoke_split": "train",
+  "smoke_output": "outputs/medclip_check",
+  "step0_dir": "outputs/Step0",
+  "methods": [
+    "R0",
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "feature_dimension": 512,
+  "data": {
+    "raw_dir": "raw",
+    "image_root": "subset",
+    "selection_file": "subset/patient_selection.csv",
+    "metadata_file": "mimic-cxr-2.0.0-metadata.csv.gz",
+    "chexpert_file": "mimic-cxr-2.0.0-chexpert.csv.gz",
+    "url_root": "https://physionet.org/files/mimic-cxr-jpg/2.1.0/files/",
+    "split_counts": {
+      "train": 4000,
+      "val": 500,
+      "test": 500
+    }
+  },
+  "features": {
+    "prompt_prefixes": [
+      "",
+      "Chest X-ray findings:",
+      "Radiology findings:",
+      "Chest radiograph report:",
+      "Imaging observations:"
+    ],
+    "prompt_splits": [
+      "val",
+      "test"
+    ]
+  },
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "head_dimension": 256,
+    "temperature": 0.07,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "max_epochs": 20,
+    "patience": 3,
+    "reconstruction_weight": 0.1,
+    "covariance_weight": 0.01
+  },
+  "mining": {
+    "hard_fraction": 0.25,
+    "hard_weight": 2.0,
+    "top_candidates": 50,
+    "budget": 20,
+    "conflict_positive_threshold": 0.2,
+    "conflict_negative_threshold": 0.8,
+    "disease_prompts": [
+      [
+        "Atelectasis is present.",
+        "Atelectasis is visible at the lung bases.",
+        "No atelectasis is present."
+      ],
+      [
+        "Cardiomegaly is present.",
+        "The cardiac silhouette is enlarged.",
+        "No cardiomegaly is present."
+      ],
+      [
+        "Consolidation is present.",
+        "Consolidation is visible in the lung fields.",
+        "No consolidation is present."
+      ],
+      [
+        "Pulmonary edema is present.",
+        "Edema is visible in both lungs.",
+        "No pulmonary edema is present."
+      ],
+      [
+        "Pleural effusion is present.",
+        "Pleural fluid is visible around the lung bases.",
+        "No pleural effusion is present."
+      ]
+    ]
+  },
+  "evaluation": {
+    "split": "val",
+    "prompt_counts": [
+      1,
+      5
+    ],
+    "bootstrap_iterations": 1000
+  },
+  "geometry": {
+    "split": "val",
+    "uniformity_pairs": 10000,
+    "max_visualization_pairs": 1000,
+    "tsne_iterations": 1000
+  }
+}

@@ -12,7 +12,6 @@ __pycache__/
 # Restricted data, patient-level indices, previews and features stay local.
 /raw/
 /subset/
-/outputs/
 
 # Fetch the pinned upstream repository separately; avoid nested Git repositories.
 /MedCLIP/

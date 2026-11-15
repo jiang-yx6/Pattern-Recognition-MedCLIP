@@ -3,7 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 import torch
-from .common import LABELS, Runtime, device_for, load_cache, load_config, manifest_path, output, parser, seed_all, write_json
+from .common import LABELS, Runtime, device_for, load_cache, load_config, manifest_path, output, parser, results, seed_all, write_json
 from .metric import load_head, negative_weights, transform_cache, valid_negatives
 
 
@@ -24,7 +24,7 @@ def mine_one(c, cache, method, seed, mode, device):
     n=len(v);positive=(cache['labels']==1)&(cache['mask']==1)
     patient=torch.as_tensor(cache['patient_id']);labels=torch.as_tensor(cache['labels']);mask=torch.as_tensor(cache['mask'])
     conflict,confidence=conflict_flags(c,cache)
-    directory=output(c,'negatives',method,f'seed_{seed}',mode);directory.mkdir(parents=True,exist_ok=True)
+    directory=results(c,'negatives',method,f'seed_{seed}',mode);directory.mkdir(parents=True,exist_ok=True)
     fields=['query_id','candidate_id','direction','similarity','weight','conflict','label_overlap','selection']
     examples=[];counts={};overlap={};similarities={};groups={}
     frequency=json.loads(output(c,'indices/frequency_groups.json').read_text(encoding='utf-8'))

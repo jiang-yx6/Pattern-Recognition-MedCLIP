@@ -1,0 +1,13 @@
+{
+  "high_frequency": [
+    "Atelectasis",
+    "Cardiomegaly"
+  ],
+  "middle_frequency": [
+    "Pleural Effusion"
+  ],
+  "low_frequency": [
+    "Edema",
+    "Consolidation"
+  ]
+}

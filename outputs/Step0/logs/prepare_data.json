@@ -1,0 +1,50 @@
+{
+  "patients": 5000,
+  "split_counts": {
+    "train": 4000,
+    "val": 500,
+    "test": 500
+  },
+  "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+  "source_selection_sha256": "5128ce340f52a893a4ac40897c3a45281bb8c794083a23e123a638bb6cf65d8e",
+  "class_statistics": [
+    {
+      "disease": "Atelectasis",
+      "positive_count": 492,
+      "negative_count": 19,
+      "valid_count": 511,
+      "uncertain_or_missing": 3489
+    },
+    {
+      "disease": "Cardiomegaly",
+      "positive_count": 491,
+      "negative_count": 219,
+      "valid_count": 710,
+      "uncertain_or_missing": 3290
+    },
+    {
+      "disease": "Pleural Effusion",
+      "positive_count": 429,
+      "negative_count": 418,
+      "valid_count": 847,
+      "uncertain_or_missing": 3153
+    },
+    {
+      "disease": "Edema",
+      "positive_count": 246,
+      "negative_count": 394,
+      "valid_count": 640,
+      "uncertain_or_missing": 3360
+    },
+    {
+      "disease": "Consolidation",
+      "positive_count": 89,
+      "negative_count": 174,
+      "valid_count": 263,
+      "uncertain_or_missing": 3737
+    }
+  ],
+  "elapsed_seconds": 6.190295600012178,
+  "peak_cuda_memory_mib": null,
+  "device": "cpu"
+}

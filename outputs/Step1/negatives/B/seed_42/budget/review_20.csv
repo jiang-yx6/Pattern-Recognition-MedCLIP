@@ -1,0 +1,174 @@
+query_id,candidate_id,direction,similarity,weight,conflict,label_overlap,selection,query_report,candidate_report
+52201741,51236281,I2T,0.5841348171234131,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Indwelling support and monitoring devices are unchanged in
+ position, except for re-positioning of a left PICC, with the tip now at or
+ just below the cavoatrial junction.  Low lung volumes limit assessment of the
+ catheter as well as accentuate cardiomediastinal and bronchovascular
+ structures.  Allowing for this factor, cardiac silhouette is probably
+ unchanged in size.  Mild pulmonary vascular congestion is present, as well as
+ apparent worsening of bilateral lower lobe opacities which probably represent
+ atelectasis.  Small right pleural effusion is present as well as a possible
+ small left effusion, but there is no visible pneumothorax."
+52201741,50427784,I2T,0.5703920722007751,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","As compared to the previous radiograph, the pre-existing bilateral parenchymal
+ opacities have decreased in extent and severity but are still clearly visible
+ lung volumes remain very low and there is unchanged evidence of mild to
+ moderate pulmonary edema.  Borderline size of the cardiac silhouette.  The
+ monitoring and support devices are in correct position."
+52201741,50414294,I2T,0.5626728534698486,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","AP chest compared to ___:
+ 
+ Moderate increase in the global pulmonary opacification could be due to
+ decrease in positive pressure ventilator support or concurrent mild pulmonary
+ edema, in the setting of widespread pneumonia.  Pleural effusions are
+ presumed, but not substantial.  There is no pneumothorax.  ET tube in standard
+ placement.  Right subclavian line ends in the upper right atrium, as before. 
+ No pneumothorax."
+52201741,50301960,I2T,0.573891282081604,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Portable upright frontal view of the chest.  
+ 
+ A dual-chamber cardiac pacer is present.  There is moderate cardiomegaly, and
+ an unfolded, slightly tortuous aorta.  There are coarse increased interstitial
+ markings throughout both lung bases, consistent with mild interstitial edema.
+ There is no overt pulmonary edema. Kerley B lines are noted and could reflect
+ chronic CHF. Increased retrocardiac density may represent a combination of
+ atelectasis and CHF findings.  No definite focal consolidation. No pleural
+ effusion or pneumothorax is detected.   Incidental note made of soft tissue
+ anchor over left humeral head."
+52201741,53122945,I2T,0.5667192935943604,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Cervical and lumbar spinal hardware is visualized.  The ET tube tip is 4.8 cm
+ above the carina.  Lung volumes are low.  There is minimal pulmonary vascular
+ redistribution but no overt pulmonary edema.  There is crowding at the left
+ base which could be due to volume loss or an early infiltrate.  Volume loss is
+ also present at the right base."
+52201741,56407588,I2T,0.5593490600585938,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Severe bilateral lower lobe atelectasis not appreciably changed. New upper
+ lobe vascular engorgement and dilated azygos vein reflects supine positioning.
+ Heart is normal size. There is no pulmonary edema. ET tube in standard
+ placement. No pneumothorax."
+52201741,52212239,I2T,0.5813518762588501,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volumes remain low, which leads to bronchovascular crowding. There is now
+ mild interstitial edema. The cardiac silhouette is moderately enlarged. There
+ is no pleural effusion or pneumothorax. A left IJ central venous catheter
+ terminates at the mid SVC."
+52201741,51496968,I2T,0.5682855248451233,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Moderate cardiomegaly is stable. Widened mediastinum is unchanged allowing the
+ difference in technique. Mild to moderate pulmonary edema is unchanged. There
+ is no pneumothorax or increasing effusions."
+52201741,50081880,I2T,0.5822968482971191,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Low lung volumes are present which cause crowding of the
+ bronchovascular structures. There is no pulmonary edema. There has been
+ interval removal of the right-sided PIC line.  There is mild cardiomegaly.
+ There is a tracheostomy tube, with an overlying rebreather mask limiting
+ assessment of the upper lungs. There is mild right basilar atelectasis. There
+ is a patchy opacity in the left lung base, which could be secondary to
+ atelectasis, however pneumonia cannot be ruled out. There is no evidence of
+ pneumothorax. A small left pleural effusion is likely present."
+52201741,51063378,I2T,0.5757426619529724,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Improved retrocardiac opacity.  Stable right basilar opacity.  Shallow
+ inspiration accentuates heart size, pulmonary vascularity.  Increased
+ pulmonary vascularity since prior exam.  Remainder normal."
+52201741,50128571,I2T,0.5737289190292358,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volumes are considerably lower today than on ___ which exaggerates
+ cardiomegaly, and is mediastinal vascular engorgement and pulmonary
+ congestion, but alternatively the patient could be mild heart failure and low
+ lung volumes are lower due to decrease compliance.  Pleural effusions are
+ small if any.  Right PIC line ends in the low SVC.  No pneumothorax."
+52201741,50151191,I2T,0.5512044429779053,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volumes are low with atelectasis at the lung bases.  .  Cardiomegaly is
+ unchanged.  Cardiac conduction device is noted with partially visualized
+ leads.  There is mild prominence of the pulmonary vasculature without
+ pulmonary edema."
+52201741,57209648,I2T,0.5552839636802673,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","In comparison with the earlier study of this date, there are
+ slightly lower lung volumes with increased engorgement of dilated pulmonary
+ vessels and enlargement of the cardiac silhouette, all consistent with
+ pulmonary edema.  There are tubes overlying the mediastinum that could well be
+ external to the patient.  What appears to be a nasogastric tube extends to the
+ stomach, though the side hole is difficult to identify."
+52201741,59512113,I2T,0.5777086615562439,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","A portable supine AP radiograph of the chest demonstrates that the
+ endotracheal tube is low lying, terminating only 2.3 cm above the carina.  The
+ orogastric tube terminates in the lower esophagus and should be advanced.  Low
+ lung volumes, mild cardiomegaly, as well as mild pulmonary edema are also
+ noted.  Small bilateral pleural effusions are better appreciated on the CT. 
+ There is no pneumothorax."
+52201741,50681748,I2T,0.5759753584861755,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Postoperative pulmonary edema has improved, now mild. Heart size top-normal.
+ Mediastinal veins slightly less distended today than before. Pleural effusions
+ are small if any.  Borderline cardiomegaly is not appreciably changed since
+ surgery."
+52201741,59155629,I2T,0.5637198686599731,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Single portable view of the chest demonstrates low lung volumes. 
+ Overall, there is mild pulmonary edema. A right middle lobe opacity is most
+ likely due to the pulmonary edema, although in the correct clinical setting
+ pnuemonia can be considered. Would recommend dieresis and then repeat of the
+ radiograph. If pulmonary embolism is a concern, as indicated on the
+ requisition, CT of the chest is required."
+52201741,50776511,I2T,0.5605779886245728,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Lung volume is low, decreased compared to ___. There is pulmonary vessel
+ engorgement, suggestive of volume overload. Mediastinum is widened, possibly
+ secondary to the pulmonary vessel congestion, however aortic pathology cannot
+ be ruled out.  Aortic contour is not clearly visualized and may appear
+ artificially widened due to rotated position. Cardiac silhouette is enlarged."
+52201741,57547177,I2T,0.5703659057617188,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","There is mild pulmonary vascular engorgement.  Moderate compressive
+ atelectasis and pregnancy may be contributing to slight enlarged appearance of
+ the heart on this portable film.  No pneumothorax or pulmonary edema."
+52201741,51934788,I2T,0.5519100427627563,2.0,False,0,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","1.  Endotracheal tube, nasogastric tube, and right internal jugular central
+ line are unchanged in position.  There continues to be perihilar and mild
+ pulmonary edema.  Persistent retrocardiac opacity is again seen, likely
+ reflecting compressive atelectasis in the setting of layering effusion,
+ although an acute infectious process in this vicinity cannot be excluded. 
+ Overall, pulmonary edema has slightly improved since ___.  No
+ pneumothorax.  Heart remains mildly enlarged."
+52201741,50546414,I2T,0.5513519644737244,2.0,False,1,top20,"No previous images.  There is a tracheostomy tube in place without
+ definite pneumothorax or pneumoperitoneum.  Cardiac silhouette is mildly
+ enlarged.  Indistinct pulmonary vessels suggest some mild elevation of
+ pulmonary venous pressure.","Compared to chest radiographs ___ and ___:
+ 
+ Mild pulmonary edema and mediastinal venous engorgement have worsened, mild
+ cardiomegaly is unchanged.  No pneumothorax.  Pleural effusions are presumed,
+ but not large.
+                                                                       
+
+         ___, MD"

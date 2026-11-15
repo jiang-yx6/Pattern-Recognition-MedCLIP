@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from .common import LABELS, Runtime, device_for, load_cache, load_config, output, parser, seed_all, write_json
+from .common import LABELS, Runtime, device_for, load_cache, load_config, output, parser, results, seed_all, write_json
 from .metric import load_head, transform_cache
 
 
@@ -41,7 +41,7 @@ def space_statistics(v, t, labels, mask, seed=42, maximum_pairs=10000):
 
 def analyze_one(c, cache, method, seed, device, visualization=True):
     head=load_head(c,method,seed,device)
-    base=output(c,'geometry',method,f'seed_{seed}' if seed is not None else 'frozen');base.mkdir(parents=True,exist_ok=True)
+    base=results(c,'geometry',method,f'seed_{seed}' if seed is not None else 'frozen');base.mkdir(parents=True,exist_ok=True)
     summaries=[]
     import matplotlib
     matplotlib.use('Agg')
@@ -99,5 +99,5 @@ def main():
     seeds=[args.seed] if args.seed is not None else c['training']['seeds']
     for method in methods:
         for seed in ([None] if method=='R0' else seeds):rows.extend(analyze_one(c,cache,method,seed,device,not args.skip_visualization))
-    pd.DataFrame(rows).to_csv(output(c,'geometry/metrics.csv'),index=False)
+    pd.DataFrame(rows).to_csv(results(c,'geometry/metrics.csv'),index=False)
     print('PASS: fixed-val geometry analysis complete',flush=True)

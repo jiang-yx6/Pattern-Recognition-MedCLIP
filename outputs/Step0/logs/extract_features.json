@@ -1,0 +1,7 @@
+{
+  "samples": 5000,
+  "elapsed_seconds": 370.4276566999906,
+  "peak_cuda_memory_mib": 637.50537109375,
+  "device": "cuda",
+  "metadata_file": "features/metadata.json"
+}

@@ -1,0 +1,35 @@
+{
+  "method": "B",
+  "seed": 44,
+  "source_split": "train",
+  "mode": "batch",
+  "rounding": "ceil of valid negative count * 0.25",
+  "counts": {
+    "I2T/top25percent": 126193,
+    "T2I/top25percent": 126193
+  },
+  "known_positive_overlap_rate": {
+    "I2T/top25percent": 0.0668262106455984,
+    "T2I/top25percent": 0.07407700902585722
+  },
+  "mean_similarity": {
+    "I2T/top25percent": 0.3018379902390334,
+    "T2I/top25percent": 0.2937148436965873
+  },
+  "candidate_frequency_group_counts": {
+    "I2T/top25percent": {
+      "high_frequency": 20339,
+      "middle_frequency": 9743,
+      "low_frequency": 7963
+    },
+    "T2I/top25percent": {
+      "high_frequency": 25583,
+      "middle_frequency": 13280,
+      "low_frequency": 9890
+    }
+  },
+  "note": "Known-label overlap is a proxy, not a verified false-negative rate; no validation/test candidates are used.",
+  "elapsed_seconds": 6.644619585946202,
+  "peak_cuda_memory_mib": 33.001953125,
+  "device": "cuda"
+}

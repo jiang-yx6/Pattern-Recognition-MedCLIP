@@ -1,0 +1,93 @@
+direction,query_id,candidate_id,correct_id,rank,AP,correct_similarity,top1_similarity,high_frequency,low_frequency,kind,correct_report,top1_report
+I2T,50178792,50178792,50178792,1,1.0,0.011417726054787636,0.011417726054787636,True,False,success,"There are small right greater than left bilateral pleural effusions. Pulmonary
+ vascular congestion is seen. The cardiac silhouette is enlarged. Right mid to
+ lower lung opacity is seen and consolidation may be present. Evidence of DISH
+ is seen along the spine.","There are small right greater than left bilateral pleural effusions. Pulmonary
+ vascular congestion is seen. The cardiac silhouette is enlarged. Right mid to
+ lower lung opacity is seen and consolidation may be present. Evidence of DISH
+ is seen along the spine."
+I2T,50028384,50028384,50028384,1,1.0,0.0447164848446846,0.0447164848446846,False,False,success,"AP chest compared to ___:
+ 
+ Previous pulmonary and mediastinal vascular engorgement have resolved.  Heart
+ size top normal.  Lungs clear.  No pneumothorax. Multiple healed rib fractures
+ on the right, left upper posterior rib fractures are new and not appreciably
+ changed.  No pneumothorax or pleural effusion.","AP chest compared to ___:
+ 
+ Previous pulmonary and mediastinal vascular engorgement have resolved.  Heart
+ size top normal.  Lungs clear.  No pneumothorax. Multiple healed rib fractures
+ on the right, left upper posterior rib fractures are new and not appreciably
+ changed.  No pneumothorax or pleural effusion."
+I2T,56481541,56481541,56481541,1,1.0,0.06231634318828583,0.06231634318828583,True,False,success,"Frontal and lateral chest radiographs demonstrate a normal cardiomediastinal
+ silhouette and well-aerated lungs which are without focal consolidation,
+ pleural effusion, or pneumothorax. There is mild right base atelectasis. The
+ visualized upper abdomen is unremarkable. No fracture is identified.  A
+ nodular opacity lateral to the right hilum is seen only on frontal view and is
+ likely in the skin, but is incompletely characterized.","Frontal and lateral chest radiographs demonstrate a normal cardiomediastinal
+ silhouette and well-aerated lungs which are without focal consolidation,
+ pleural effusion, or pneumothorax. There is mild right base atelectasis. The
+ visualized upper abdomen is unremarkable. No fracture is identified.  A
+ nodular opacity lateral to the right hilum is seen only on frontal view and is
+ likely in the skin, but is incompletely characterized."
+I2T,52841361,52841361,52841361,1,1.0,0.016339469701051712,0.016339469701051712,False,False,success,"Moderate to severe infiltrative pulmonary abnormality, sparing the lung
+ apices, has probably not changed since ___.  CT scan showed extensive
+ acinar nodules throughout both lungs, consistent with widespread infection, or
+ severe aspiration, conceivably hemorrhagic. Of note, there was also a cm size
+ lung nodule and a moderate degree of central adenopathy which could be
+ reactive to infection, but both raise the possibility of a preexisting
+ condition, unrelated to recent trauma.  Close followup is advised.","Moderate to severe infiltrative pulmonary abnormality, sparing the lung
+ apices, has probably not changed since ___.  CT scan showed extensive
+ acinar nodules throughout both lungs, consistent with widespread infection, or
+ severe aspiration, conceivably hemorrhagic. Of note, there was also a cm size
+ lung nodule and a moderate degree of central adenopathy which could be
+ reactive to infection, but both raise the possibility of a preexisting
+ condition, unrelated to recent trauma.  Close followup is advised."
+I2T,52524203,52524203,52524203,1,1.0,0.03815624117851257,0.03815624117851257,False,False,success,"The loose screw previously seen in the left subscapular region has been
+ removed.  There is no postoperative subcutaneous emphysema.  The remaining 4
+ longitudinal plates with perpendicularly oriented screws that stabilize the
+ lateral margins of ribs 4 through 7 appear intact without evidence of
+ loosening or hardware failure.  No other foreign metallic bodies are seen.
+ Well-healed, displaced fractures of the left r8th through 10th ribs are noted.
+ There is no focal consolidation, pleural effusion, pneumothorax, or pulmonary
+ edema. The cardiomediastinal silhouette is within normal limits.","The loose screw previously seen in the left subscapular region has been
+ removed.  There is no postoperative subcutaneous emphysema.  The remaining 4
+ longitudinal plates with perpendicularly oriented screws that stabilize the
+ lateral margins of ribs 4 through 7 appear intact without evidence of
+ loosening or hardware failure.  No other foreign metallic bodies are seen.
+ Well-healed, displaced fractures of the left r8th through 10th ribs are noted.
+ There is no focal consolidation, pleural effusion, pneumothorax, or pulmonary
+ edema. The cardiomediastinal silhouette is within normal limits."
+I2T,56285883,50893845,56285883,363,0.0027548209366391185,0.07571892440319061,0.07672056555747986,False,False,failure,"The heart size, mediastinal, and hilar contours are normal.  The lungs are
+ clear without pleural effusion, focal consolidation, or pneumothorax.  Osseous
+ structures are unremarkable.","Upright frontal and lateral views of the chest show no free air
+ under the diaphragm.  There is no pleural effusion, pneumothorax or focal
+ airspace consolidation.  The heart is normal in size.  The mediastinum and
+ hilar structures are unremarkable.  There is no pneumomediastinum."
+I2T,51857131,54858624,51857131,356,0.0028089887640449437,0.01396472379565239,0.015580988489091396,False,False,failure,No evidence of acute cardiopulmonary abnormalities.,"Interval development of partial collapse of right middle and right
+ lower lobes suggesting mucous plugging within the bronchus intermedius. 
+ Accompanying moderate right pleural effusion has worsened since the prior
+ study.  Cardiomediastinal contours are stable.  Left lung is grossly clear
+ except for linear atelectasis at the left lung base.  Questionable small left
+ pleural effusion, but no visible pneumothorax."
+I2T,51055127,51014021,51055127,178,0.0056179775280898875,0.007416401989758015,0.009008338674902916,False,False,failure,"Concern for developing right upper lobe and unchanged left lower lobe
+ opacities concerning for multifocal infectious process.","As compared to the previous radiograph, no relevant change is seen.  Old
+ pleural thickening with areas of scarring at the right lung base. Right
+ pectoral pacemaker.  Mild cardiomegaly. Low lung volumes. Normal appearance of
+ the left lung. Status post clavicular surgery on the left.  No pulmonary
+ nodules or masses suggestive of metastatic or malignant disease."
+I2T,56973182,54437271,56973182,16,0.0625,0.04889865964651108,0.04927810654044151,True,False,failure,"There is no significant right lower lung opacity, minimal new atelectatic band
+ is seen at the left lung base.  The trachea is still slightly deviated towards
+ the right, which could be due to a thyroid abnormality.  There is no pleural
+ effusion or pneumothorax.","In comparison with the study of ___, there is no evidence of acute
+ cardiopulmonary disease.  There does appear to be some irregularity about
+ several of the mid thoracic ribs in the mid axillary line.  These could
+ reflect healing rib fractures.  Elevation of the distal right clavicle with
+ respect to the acromion is again seen.  No evidence of pneumothorax."
+I2T,50731594,54437271,50731594,81,0.012345679012345678,0.053523581475019455,0.05420998856425285,False,False,failure,"PA and lateral views of the chest are provided demonstrating
+ midline sternotomy wires and mediastinal clips.  The lungs are clear without
+ focal consolidation, effusion, or pneumothorax.  A focal eventration of the
+ right hemidiaphragm is again noted.  The heart and mediastinal contour appears
+ normal.  No signs of CHF.  The bony structures are intact.","In comparison with the study of ___, there is no evidence of acute
+ cardiopulmonary disease.  There does appear to be some irregularity about
+ several of the mid thoracic ribs in the mid axillary line.  These could
+ reflect healing rib fractures.  Elevation of the distal right clavicle with
+ respect to the acromion is again seen.  No evidence of pneumothorax."

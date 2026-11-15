@@ -1,0 +1,2 @@
+method,seed,hard_source,epochs,best_epoch,best_val_R5,hard_negative_count,hard_negative_label_overlap_rate,elapsed_seconds,peak_cuda_memory_mib,trainable_parameters,smoke_test
+B,42,top20,13,10,0.08499999999999999,65735,0.1368525138814939,3.715660948306322,89.0888671875,262656,False

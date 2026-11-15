@@ -1,0 +1,32 @@
+{
+  "method": "B",
+  "seed": 42,
+  "hard_source": "dynamic",
+  "smoke_test": false,
+  "status": "complete",
+  "epochs": 12,
+  "best_epoch": 9,
+  "best_val_R5": 0.067,
+  "training_samples": 4000,
+  "trainable_parameters": 262656,
+  "head_parameters_updated": true,
+  "gradient_checks": {
+    "image_shared.weight": true,
+    "image_shared.bias": true,
+    "text_shared.weight": true,
+    "text_shared.bias": true
+  },
+  "backbone_loaded": false,
+  "backbone_updated": false,
+  "backbone_frozen": true,
+  "skipped_queries": 0,
+  "hard_negative_count": 3028272,
+  "hard_negative_label_overlap_rate": 0.0783734089936439,
+  "static_activated_count": 0,
+  "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+  "train_cache_sha256": "c432e2691ed26e421f2d31d6fac7ba316d6d09b0a5ca7db8283b24696613b8de",
+  "config_sha256": "29e7d6454b2e44f416d9cc1841c5d944139e9a162193bcbbc454b5f6894e8946",
+  "elapsed_seconds": 10.94776603486389,
+  "peak_cuda_memory_mib": 89.50390625,
+  "device": "cuda"
+}

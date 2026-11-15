@@ -1,0 +1,114 @@
+{
+  "status": "complete",
+  "samples": 5000,
+  "dimension": 512,
+  "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+  "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+  "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+  "config_sha256": "6d966a1a8676099bfbc102a6fdb270652ecf6390fea7ba338849af2ebe690a03",
+  "vision_config_revision": "d00d478bfaf1f417d34a1186673ad4b4be264c51",
+  "text_config_revision": "d5892b39a4adaed74b92212a44081509db72f87b",
+  "text_max_length": 77,
+  "padding": "max_length",
+  "normalization": "L2",
+  "dtype": "float32",
+  "strict_checkpoint_load": true,
+  "backbone_frozen": true,
+  "batch_size": 4,
+  "files": {
+    "train": {
+      "sha256": "c432e2691ed26e421f2d31d6fac7ba316d6d09b0a5ca7db8283b24696613b8de",
+      "samples": 4000,
+      "dimension": 512,
+      "signature": {
+        "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+        "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+        "text_max_length": 77,
+        "prompt_prefixes": [
+          ""
+        ],
+        "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9"
+      },
+      "elapsed_seconds": 276.06876359999296,
+      "text_statistics": {
+        "reports": 4000,
+        "truncated": 1385,
+        "truncation_fraction": 0.34625,
+        "max_tokens": 356,
+        "median_tokens": 65.0
+      },
+      "prompt_count": 1
+    },
+    "val": {
+      "sha256": "5886066170e7aed09f25a9373ec6fa0f9a8e52454e78cbece63808300c1ba853",
+      "samples": 500,
+      "dimension": 512,
+      "signature": {
+        "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+        "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+        "text_max_length": 77,
+        "prompt_prefixes": [
+          "",
+          "Chest X-ray findings:",
+          "Radiology findings:",
+          "Chest radiograph report:",
+          "Imaging observations:"
+        ],
+        "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9"
+      },
+      "elapsed_seconds": 38.39996640000027,
+      "text_statistics": {
+        "reports": 500,
+        "truncated": 169,
+        "truncation_fraction": 0.338,
+        "max_tokens": 218,
+        "median_tokens": 64.0
+      },
+      "prompt_count": 5
+    },
+    "test": {
+      "sha256": "b1e533a59beecb857181595040402db8eaee07f5eda7b23c42b6ad71d04213f7",
+      "samples": 500,
+      "dimension": 512,
+      "signature": {
+        "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+        "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+        "text_max_length": 77,
+        "prompt_prefixes": [
+          "",
+          "Chest X-ray findings:",
+          "Radiology findings:",
+          "Chest radiograph report:",
+          "Imaging observations:"
+        ],
+        "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9"
+      },
+      "elapsed_seconds": 38.30953430000227,
+      "text_statistics": {
+        "reports": 500,
+        "truncated": 167,
+        "truncation_fraction": 0.334,
+        "max_tokens": 221,
+        "median_tokens": 66.0
+      },
+      "prompt_count": 5
+    }
+  },
+  "processor": {
+    "image_size": 224,
+    "image_mean": 0.5862785803043838,
+    "image_std": 0.27950088968644304,
+    "do_pad_square": true
+  },
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "transformers": "4.24.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "Pillow": "9.5.0"
+  },
+  "elapsed_seconds": 370.4276566999906,
+  "peak_cuda_memory_mib": 637.50537109375,
+  "device": "cuda"
+}

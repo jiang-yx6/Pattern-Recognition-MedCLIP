@@ -1,0 +1,23 @@
+{
+  "sha256": "c432e2691ed26e421f2d31d6fac7ba316d6d09b0a5ca7db8283b24696613b8de",
+  "samples": 4000,
+  "dimension": 512,
+  "signature": {
+    "manifest_sha256": "246a519e763c5cc4bdcbe55f448d546b43e92f1fc346033961153fd800a98796",
+    "checkpoint_sha256": "07bf9f917ccce482ea30ec84e533a30c3ad395c424d3624f6b72edf8484f8126",
+    "text_max_length": 77,
+    "prompt_prefixes": [
+      ""
+    ],
+    "medclip_commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9"
+  },
+  "elapsed_seconds": 276.06876359999296,
+  "text_statistics": {
+    "reports": 4000,
+    "truncated": 1385,
+    "truncation_fraction": 0.34625,
+    "max_tokens": 356,
+    "median_tokens": 65.0
+  },
+  "prompt_count": 1
+}

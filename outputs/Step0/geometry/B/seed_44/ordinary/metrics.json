@@ -1,0 +1,23 @@
+{
+  "samples": 500,
+  "dimension": 256,
+  "alignment_squared_l2": 1.1790378093719482,
+  "paired_cosine_distance": 0.5895189046859741,
+  "modality_gap": 0.9149726629257202,
+  "uniformity_pairs": 10000,
+  "seed": 42,
+  "image_uniformity": -0.7658262252807617,
+  "image_energy_top10": 0.9904934898029517,
+  "image_energy_top50": 0.9987700664844085,
+  "image_dimensions_90": 5,
+  "image_mean_dimension_std": 0.028493390084677613,
+  "text_uniformity": -0.8337585926055908,
+  "text_energy_top10": 0.9515794684244611,
+  "text_energy_top50": 0.9920027499767899,
+  "text_dimensions_90": 7,
+  "text_mean_dimension_std": 0.03218211350266755,
+  "method": "B",
+  "training_seed": 44,
+  "branch": "ordinary",
+  "split": "val"
+}

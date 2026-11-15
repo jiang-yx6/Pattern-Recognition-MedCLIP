@@ -1,0 +1,51 @@
+{
+  "method": "B",
+  "seed": 42,
+  "source_split": "train",
+  "mode": "budget",
+  "rounding": "ceil of valid negative count * 0.25",
+  "counts": {
+    "I2T/top20": 80000,
+    "I2T/conflict_first20": 80000,
+    "T2I/top20": 80000,
+    "T2I/conflict_first20": 80000
+  },
+  "known_positive_overlap_rate": {
+    "I2T/top20": 0.1190875,
+    "I2T/conflict_first20": 0.1190875,
+    "T2I/top20": 0.1006875,
+    "T2I/conflict_first20": 0.1006875
+  },
+  "mean_similarity": {
+    "I2T/top20": 0.3862078970173374,
+    "I2T/conflict_first20": 0.3862078970173374,
+    "T2I/top20": 0.3851000246638432,
+    "T2I/conflict_first20": 0.3851000246638432
+  },
+  "candidate_frequency_group_counts": {
+    "I2T/top20": {
+      "high_frequency": 21405,
+      "middle_frequency": 9476,
+      "low_frequency": 7336
+    },
+    "I2T/conflict_first20": {
+      "high_frequency": 21405,
+      "middle_frequency": 9476,
+      "low_frequency": 7336
+    },
+    "T2I/top20": {
+      "high_frequency": 18476,
+      "middle_frequency": 8596,
+      "low_frequency": 7220
+    },
+    "T2I/conflict_first20": {
+      "high_frequency": 18476,
+      "middle_frequency": 8596,
+      "low_frequency": 7220
+    }
+  },
+  "note": "Known-label overlap is a proxy, not a verified false-negative rate; no validation/test candidates are used.",
+  "elapsed_seconds": 9.485370000009425,
+  "peak_cuda_memory_mib": 33.001953125,
+  "device": "cuda"
+}

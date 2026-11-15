@@ -54,6 +54,11 @@ def output(c, *parts):
     return resolve(c['step0_dir']).joinpath(*parts)
 
 
+def results(c, *parts):
+    """Root for Step1 downstream outputs (training/mining/evaluation/geometry)."""
+    return resolve(c['step1_dir']).joinpath(*parts)
+
+
 def manifest_path(c):
     return output(c, 'indices', 'mimic_5000.csv')
 
