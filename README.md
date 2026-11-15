@@ -1,6 +1,6 @@
 # MIMIC-CXR / MedCLIP 实验工程
 
-六个正式入口严格命名为 `prepare_data.py`、`extract_features.py`、`train_metric.py`、`mine_negatives.py`、`evaluate_retrieval.py`、`analyze_geometry.py`。共用 `configs/default.json`：固定数据划分 seed=42，训练 seeds=[42,43,44]，方法 R0/A/B/C/D。所有新产物统一写入 `outputs/Step0/`；原始图片保留在 `subset/images/`，不会重复复制。
+六个正式入口严格命名为 `prepare_data.py`、`extract_features.py`、`train_metric.py`、`mine_negatives.py`、`evaluate_retrieval.py`、`analyze_geometry.py`。共用 `configs/default.json`：固定数据划分 seed=42，训练 seeds=[42,43,44]，方法 R0/A/B/C/D。数据准备（Step0）写入 `outputs/Step0/`（indices、features），度量学习下游（Step1：训练/挖掘/检索/几何）写入 `outputs/Step1/`；原始图片保留在 `subset/images/`，不会重复复制。
 
 ## 目录导航
 
@@ -12,7 +12,7 @@
 | scripts/ | 下载和检查工具，原 Step0/ 中的三个脚本已迁入此处 |
 | tests/ | 关键算法与边界测试 |
 | docs/handoff.md | 唯一交接说明：架构、数据接口、已有结果及后续待办 |
-| outputs/Step0/ | 集中生成产物，详见其中 README.md |
+| outputs/Step0/、outputs/Step1/ | Step0 数据产物（indices/features），Step1 下游结果（training/negatives/evaluation/geometry） |
 | raw/、subset/ | 原始报告/元数据与固定图片、源索引 |
 | MedCLIP/、.venv-medclip/ | 固定官方模型与本机运行环境 |
 | hypotheses.md | 纳入版本管理的实验假设源文件 |
@@ -37,13 +37,68 @@
 
 `extract_features` 默认使用本地 Hugging Face 缓存；缺少配置或 tokenizer 时添加 `--online`。已生成且指纹匹配的特征可复用，数据/参数不匹配会停止，显式 `--force` 才重新提取。训练同样只复用配置和训练缓存匹配的完整运行。
 
-所有入口支持 `--config`。模型入口支持 `--device cuda|cpu`。训练默认执行 A/B/C/D × 42/43/44 共 12 次，最多 20 epoch，val 双向 R@5 均值连续 3 轮不升即停止；可用 `--method B --seed 43` 指定单次。`--smoke-test` 固定使用 128 对训练数据跑 2 轮，写入单独的 `smoke_training/`，不会混入正式模型。
+所有入口支持 `--config`。模型入口支持 `--device cuda|cpu`。训练默认执行 A/B/C/D × 42/43/44 共 12 次，最多 20 epoch，val 双向 R@5 均值连续 3 轮不升即停止；可用 `--method B --seed 43` 指定单次。`--hard-source top20|conflict_first20`（仅 `--method B`）做固定预算难负样本对照。`--smoke-test` 固定使用 128 对训练数据跑 2 轮，写入单独的 `smoke_training/`，不会混入正式模型。
 
-检索默认评估 val、R0/A/B/C/D、各训练种子及 1/5 版本提示；`--split test` 只在最终评测时使用。`mine_negatives` 默认对 B 的三个种子进行训练集批内最高 25% 挖掘；`--method D` 切换方法，`--mode budget` 额外输出 Top50 内直接 Top20 和冲突候选优先 Top20。普通 B/D 训练在每个批次动态重新挖掘，不读取静态候选清单。
+检索默认评估 val、R0/A/B/C/D、各训练种子及 1/5 版本提示；`--split test` 只在最终评测时使用。`mine_negatives` 默认对 B 的三个种子进行训练集批内最高 25% 挖掘；`--method D` 切换方法，`--mode budget` 额外输出 Top50 内直接 Top20 和冲突候选优先 Top20。普通 B/D 训练在每个批次动态重新挖掘，不读取静态候选清单；固定预算候选需先 `--mode budget` 导出，再用 `train_metric.py --hard-source top20|conflict_first20` 消费。
 
 几何分析固定使用 val，C/D 同时分析共享与私有分支，默认包括联合 PCA+t-SNE；快速数值排查可加 `--skip-visualization`。二维图仅辅助解释，类别着色使用第一个已知阳性标签，多病与未知的统计保留在原始 labels/mask。
 
-## Step0 产物目录
+## Step1 度量学习下游流水线（重点）
+
+Step1 在冻结 MedCLIP 缓存特征之上训练度量头，比较普通/难负样本与普通/共享私有分支，并做分步提示难负样本筛选消融。结果统一写入 `outputs/Step1/`，输入特征仍从 `outputs/Step0/features/` 读取（不复制数据）。
+
+### 方法矩阵
+
+| 方法 | 负样本 | 度量头 |
+|---|---|---|
+| R0 | 无训练，直接用冻结特征 | 原始 512 维 |
+| A | 普通有效批内负样本 | 图像/文本各一个 Linear(512,256)，L2 归一化 |
+| B | 批内最高 25% 相似度权重 2 | 同 A |
+| C | 普通有效批内负样本 | A + 各自私有头 Linear(512,256) + 重建头 Linear(512,512) |
+| D | 批内最高 25% 相似度权重 2 | 同 C |
+
+### 训练配置（方法 A/B/C/D）
+
+- 正例为同检查图文对；批内其余为候选负例；同患者、或「已知阳性集合相同且非空」的配对不作负例（[metric.py `valid_negatives`](mimic_pipeline/metric.py)）。
+- 双向 InfoNCE，温度 0.07，图搜文与文搜图损失取平均。
+- AdamW lr=1e-3、weight_decay=1e-4、batch=128；最多 20 epoch，val 双向 R@5 均值连续 3 轮不升即早停。
+- B/D：每个方向在有效批内负例中按余弦降序取最高 25%（向上取整）权重 2，其余与正例权重 1。
+- C/D：共享向量用于对比与检索；总损失 = 对比 + 0.1×重建 MSE + 0.01×中心化共享/私有交叉协方差均方（两模态平均），保存三项损失曲线与每维标准差。
+
+### 分步提示难负样本筛选消融（Step 4）
+
+- 冻结 MedCLIP，对训练图像算「疾病描述 / 解剖位置 / 否定描述」三句相似度（5 病 × 3 句，见 `configs/default.json` 的 `mining.disease_prompts`）；`(前两项均值 − 否定) × logit_scale` 经 sigmoid 得置信分，已知阳性 <0.2 或已知阴性 >0.8 标记冲突（[mining.py `conflict_flags`](mimic_pipeline/mining.py)）。
+- 候选：每查询从训练集相似度 Top50（`mining.top_candidates`）中选 20（`mining.budget`），分「直接 Top20」与「冲突候选优先、余下按相似度补足」两种。候选导出用 `mine_negatives.py --mode budget`；接入训练用 `train_metric.py --hard-source top20|conflict_first20`（仅 `--method B`）。
+- 两组同批：固定预算训练用同一 seed → 相同批序；「入选且出现在批内的负例」权重 2，其余 1。
+- 说明：该冲突信号来自冻结 MedCLIP 的文本侧，实测其对疾病区分极弱（置信分恒 ~0.5、冲突数为 0），故 `conflict_first20` 与 `top20` 目前等价。若要恢复区分度，需把冲突信号换成图像侧（如 k-NN 标签一致性）。
+
+### 运行
+
+```cmd
+:: 训练检查：128 对 × 2 轮，验证损失有限/头部更新/主干冻结/私有头梯度
+".venv-medclip\Scripts\python.exe" train_metric.py --smoke-test
+
+:: 正式训练 A/B/C/D × 42/43/44
+".venv-medclip\Scripts\python.exe" train_metric.py
+
+:: B 组难负统计（训练集批内最高 25%）
+".venv-medclip\Scripts\python.exe" mine_negatives.py --method B --mode batch
+
+:: 固定预算候选导出 + 对照训练（依赖 B 头先训好）
+".venv-medclip\Scripts\python.exe" mine_negatives.py --method B --seed 42 --mode budget
+".venv-medclip\Scripts\python.exe" train_metric.py --method B --seed 42 --hard-source top20
+".venv-medclip\Scripts\python.exe" train_metric.py --method B --seed 42 --hard-source conflict_first20
+
+:: 检索评估 + 几何分析（val，C/D 含共享/私有分支）
+".venv-medclip\Scripts\python.exe" evaluate_retrieval.py --split val
+".venv-medclip\Scripts\python.exe" analyze_geometry.py
+```
+
+### 输出与记录
+
+`outputs/Step1/training/<method>/seed_<seed>/`（固定预算为 `seed_<seed>_<hard_source>/`）含 `model.pt`、`val_features.npz`、`losses.csv/png`、`per_dimension_std.json`、`runtime.json`；B/D 另有 `hard_examples_20.csv`。`runtime.json` 记录方法、种子、`hard_source`、epochs、`best_val_R5`、可训练参数量、耗时、峰值显存、梯度/冻结检查、难负样本计数与标签重合率（假负例代理）。负例清单见 `outputs/Step1/negatives/`，检索/几何见 `outputs/Step1/evaluation/`、`geometry/`。
+
+## Step0 数据产物目录（下游输入）
 
 ```text
 outputs/Step0/
@@ -65,14 +120,9 @@ outputs/Step0/
     data_audit/, medclip_check/
   logs/
     prepare_data.json, extract_features.json
-  training/<method>/seed_<seed>/
-    model.pt, val_features.npz, losses.csv, losses.png
-    per_dimension_std.json, runtime.json
-    hard_examples_20.csv  (B/D)
-  negatives/<method>/seed_<seed>/<batch|budget>/
-  evaluation/<val|test>/
-  geometry/
 ```
+
+训练/挖掘/检索/几何等下游产物现在写入 `outputs/Step1/`（结构见上文「Step1」节），不再落在 Step0。
 
 `training/*/runtime.json` 为真实每次训练的种子、方法、耗时、峰值 CUDA 显存、参数量、早停轮次、梯度和冻结检查；不使用小样本耗时冒充正式训练记录。CPU 调试的 CUDA 显存记 null。根目录 `hypotheses.md` 是版本化的预先约定模板；`outputs/Step0/hypotheses.md` 是本次交付快照，H1-H3 均列比较组、主指标和预期方向。正式实验结论必须依据后续数值和区间填写。
 
