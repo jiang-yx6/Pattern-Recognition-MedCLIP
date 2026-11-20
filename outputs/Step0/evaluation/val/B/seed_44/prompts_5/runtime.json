@@ -1,9 +1,0 @@
-{
-  "method": "B",
-  "seed": 44,
-  "split": "val",
-  "prompts": 5,
-  "elapsed_seconds": 0.007915599999250844,
-  "peak_cuda_memory_mib": 44.2421875,
-  "device": "cuda"
-}

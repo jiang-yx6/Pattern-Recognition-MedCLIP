@@ -1,3 +1,0 @@
-epoch,total_loss,contrastive_loss,reconstruction_loss,covariance_loss,val_R5,skipped_queries
-1,5.075019836425781,5.075019836425781,0.0,0.0,0.009000000000000001,0
-2,5.129498481750488,5.129498481750488,0.0,0.0,0.01,0

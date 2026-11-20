@@ -1,5 +1,0 @@
-method,seed,hard_source,epochs,best_epoch,best_val_R5,hard_negative_count,hard_negative_label_overlap_rate,elapsed_seconds,peak_cuda_memory_mib,trainable_parameters,smoke_test
-A,42,dynamic,2,2,0.015,0,0.0,0.8277305578812957,73.4248046875,262656,True
-B,42,dynamic,2,2,0.01,16216,0.0386655155402072,0.12803338654339314,74.0205078125,262656,True
-C,42,dynamic,2,2,0.015,0,0.0,0.13769489340484142,92.2841796875,1050624,True
-D,42,dynamic,2,2,0.01,16216,0.0386655155402072,0.10314070899039507,92.2841796875,1050624,True
